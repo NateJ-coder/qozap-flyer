@@ -24,7 +24,7 @@
             max-width: 960px;
             margin: 120px auto 20px auto; /* Adjust 120px as needed for vertical alignment */
             padding: 30px;
-            background-color: rgba(0, 0, 0, 0); /* Fully transparent */
+            background-color: rgba(0, 0, 0, 0); /* Fully transparent - already correct */
             border-radius: 8px;
             opacity: 0;
             animation: fadeIn 1.5s forwards;
@@ -53,7 +53,7 @@
             padding: 30px 20px;
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background for readability */
+            /* REMOVED: background-color for sections */
             border-radius: 8px;
         }
         section:last-child {
@@ -63,15 +63,25 @@
             color: #64b5f6;
             margin-top: 0;
             margin-bottom: 25px;
-            text-align: center;
+            text-align: center; /* This was for the 'Key Features' title, keeping it */
         }
+        /* Adjusted for specific sections that had left/right alignment */
+        #overview h2, #faq h2 {
+            text-align: left; /* Keep these aligned left as per your original script */
+        }
+        #features h2 {
+            text-align: right; /* Keep this aligned right as per your original script */
+        }
+
+
         h3 {
             color: #bbdefb;
             margin-top: 15px;
             margin-bottom: 10px;
         }
         .info-block {
-            background-color: rgba(0, 0, 100, 0.5); 
+            /* CHANGED: Removed semi-transparent blue background */
+            background-color: rgba(0, 0, 0, 0); 
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -98,7 +108,7 @@
             padding: 40px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
-            background-color: rgba(0, 0, 0, 0.5);
+            /* REMOVED: background-color */
             border-radius: 8px;
         }
         .cta-button {
@@ -119,7 +129,8 @@
         .faq-item {
             margin-bottom: 20px;
             padding: 15px;
-            background-color: rgba(0, 0, 100, 0.2);
+            /* CHANGED: Removed semi-transparent blue background */
+            background-color: rgba(0, 0, 0, 0); 
             border-radius: 8px;
         }
         .faq-item h3 {
@@ -129,7 +140,7 @@
         .contact-section {
             text-align: center;
             padding: 30px 20px;
-            background-color: rgba(0, 0, 0, 0.6);
+            /* REMOVED: background-color */
             border-radius: 8px;
         }
         .contact-section p {
@@ -152,7 +163,7 @@
             margin-top: 40px;
         }
 
-        /* --- Pop-up Modal CSS --- */
+        /* --- Pop-up Modal CSS (No changes here) --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -227,7 +238,7 @@
             to { opacity: 1; }
         }
 
-        /* --- Scroll-Reveal Animations --- */
+        /* --- Scroll-Reveal Animations (No changes here) --- */
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(50px);
@@ -250,13 +261,13 @@
             <p>Your Guide to Simplified Invoicing and Payments with QoZap</p>
         </div>
 
-        <section id="overview">
-            <h2 style="text-align: left;">Overview</h2>
-            <div class="info-block reveal-on-scroll">
+        <section id="overview" class="reveal-on-scroll">
+            <h2>Overview</h2>
+            <div class="info-block">
                 <h3>What is QoZap?</h3>
                 <p>Imagine a world where invoicing and getting paid on the go is seamless and stress-free. That's the vision behind QoZap! Currently under development in Port Alfred, our mobile-friendly app is being crafted to simplify the lives of service providers who are always on the move, working directly with clients at their homes or various service locations. We recognize the common frustrations of juggling paperwork, tracking payments, and the delays that can come with it. QoZap is our planned solution to bring efficiency and ease to your daily workflow, letting you concentrate on what you do best – providing excellent service.</p>
             </div>
-            <div class="info-block reveal-on-scroll">
+            <div class="info-block">
                 <h3>Core Principles (Planned)</h3>
                 <ul>
                     <li><strong>Simplicity:</strong> We aim for an intuitive and user-friendly interface that anyone can navigate. Say goodbye to complex systems and hello to straightforward digital invoicing, once our development is complete.</li>
@@ -264,7 +275,7 @@
                     <li><strong>Mobile-First:</strong> Designed with a mobile-first approach, we're ensuring a smooth and fully functional experience on your smartphone or tablet when the app launches.</li>
                 </ul>
             </div>
-            <div class="info-block reveal-on-scroll">
+            <div class="info-block">
                 <h3>Target Audience</h3>
                 <p>Our initial focus is on empowering the vibrant community of service providers right here in Port Alfred. If you fall into any of these categories, QoZap is being designed with you in mind:</p>
                 <ul>
@@ -277,17 +288,17 @@
             </div>
         </section>
 
-        <section id="features">
-            <h2 style="text-align: right;">Key Features (Under Development)</h2>
-            <ul class="reveal-on-scroll">
-            <li><strong>Quote Generation & Sharing:</strong> After onboarding, service providers can generate quotes within the app and share them with clients in person or via WhatsApp/email.</li>
-            <li><strong>On-Site Service & Invoice Preparation:</strong> Upon service completion, providers can tally expenses (e.g., materials), input their employee details, and tap "get invoice."</li>
-            <li><strong>Automated Invoice Generation:</strong> The app will calculate total costs (expenses + labour + service fees based on onboarding setup) and generate a professional invoice with all the service provider's information, including the servicing employee's details and address. (Other compulsory professional invoice details will also be included).</li>
-            <li><strong>Flexible Payment Options with QR Code & Sharing:</strong> A QR code will be generated on the provider's phone for immediate scanning by the client. Alternatively, the invoice can be shared with the client via email, WhatsApp, or other platforms.</li>
-            <li><strong>Client-Side Payment Gateway:</strong> Clients will have a "pay now" button, redirecting them to a secure payment gateway to choose their preferred method: PayPal, other EFT gateways, card payment, or direct EFT (using the service provider's bank details provided during onboarding).</li>
-            <li><strong>Automated Payment Reminders:</strong> Clients with outstanding bills will receive automated payment reminders (via email, WhatsApp, or the app, if downloaded) every 24 hours.</li>
-            <li><strong>Real-Time Payment Tracking & Notifications:</strong> Service providers will receive instant notifications upon client payment, and the app will automatically log the payment, aiding in tracking outstanding invoices and payment history.</li>
-            <li><strong>(Future Development) Enhanced Repeat Service:</strong> For returning clients, the app will store past service history. Upon payment for new services (via QR code or other methods), client payment details can be saved to streamline future transactions.</li>
+        <section id="features" class="reveal-on-scroll">
+            <h2>Key Features (Under Development)</h2>
+            <ul>
+                <li><strong>Quote Generation & Sharing:</strong> After onboarding, service providers can generate quotes within the app and share them with clients in person or via WhatsApp/email.</li>
+                <li><strong>On-Site Service & Invoice Preparation:</strong> Upon service completion, providers can tally expenses (e.g., materials), input their employee details, and tap "get invoice."</li>
+                <li><strong>Automated Invoice Generation:</strong> The app will calculate total costs (expenses + labour + service fees based on onboarding setup) and generate a professional invoice with all the service provider's information, including the servicing employee's details and address. (Other compulsory professional invoice details will also be included).</li>
+                <li><strong>Flexible Payment Options with QR Code & Sharing:</strong> A QR code will be generated on the provider's phone for immediate scanning by the client. Alternatively, the invoice can be shared with the client via email, WhatsApp, or other platforms.</li>
+                <li><strong>Client-Side Payment Gateway:</strong> Clients will have a "pay now" button, redirecting them to a secure payment gateway to choose their preferred method: PayPal, other EFT gateways, card payment, or direct EFT (using the service provider's bank details provided during onboarding).</li>
+                <li><strong>Automated Payment Reminders:</strong> Clients with outstanding bills will receive automated payment reminders (via email, WhatsApp, or the app, if downloaded) every 24 hours.</li>
+                <li><strong>Real-Time Payment Tracking & Notifications:</strong> Service providers will receive instant notifications upon client payment, and the app will automatically log the payment, aiding in tracking outstanding invoices and payment history.</li>
+                <li><strong>(Future Development) Enhanced Repeat Service:</strong> For returning clients, the app will store past service history. Upon payment for new services (via QR code or other methods), client payment details can be saved to streamline future transactions.</li>
             </ul>
         </section>
 
@@ -298,7 +309,7 @@
         </section>
 
         <section id="faq">
-            <h2 style="text-align: left;">Frequently Asked Questions (FAQ)</h2>
+            <h2>Frequently Asked Questions (FAQ)</h2>
             <div class="faq-item reveal-on-scroll">
                 <h3>What types of service providers will QoZap be for?</h3>
                 <p>Initially, we're focusing on supporting a wide range of on-location service professionals in Port Alfred, including home cleaning and maintenance services, mobile beauty and wellness providers, tutors and personal trainers, pet groomers and walkers, as well as handymen and various repair services.</p>
@@ -358,6 +369,7 @@
                 surveyModal.classList.remove('active');
             };
 
+            // This line controls when the modal appears (3000ms = 3 seconds)
             setTimeout(showModal, 3000); 
 
             closeButton.addEventListener('click', hideModal);
