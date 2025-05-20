@@ -8,12 +8,12 @@
         body {
             font-family: sans-serif;
             margin: 0;
-            background-image: url('background.png');
-            background-size: cover;
+            background-image: url('background.png'); 
+            background-size: cover; 
             background-repeat: no-repeat;
-            background-position: center top;
-            background-attachment: fixed;
-
+            background-position: center top; 
+            background-attachment: fixed; 
+            
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -52,6 +52,7 @@
             padding: 30px 20px;
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* ADDED: A subtle dark background for sections to improve text readability */
             background-color: rgba(0, 0, 0, 0.4); /* Darker, slightly more opaque */
             border-radius: 8px;
         }
@@ -61,10 +62,7 @@
         h2 {
             color: #64b5f6;
             margin-top: 0;
-            /* MODIFIED: Increased font-size for main section titles */
-            font-size: 2.8em; /* Original was likely closer to 2em or 2.2em */
-            margin-bottom: 35px; /* Adjusted margin for new font size */
-            line-height: 1.2; /* Improve multi-line title readability */
+            margin-bottom: 25px;
         }
         /* Adjusted for specific sections that had left/right alignment */
         #overview h2, #faq h2 {
@@ -78,10 +76,9 @@
             color: #bbdefb;
             margin-top: 15px;
             margin-bottom: 10px;
-            /* ENSURED: No change to h3 font size */
-            font-size: 1.3em; /* Keep it consistent with current size */
         }
         .info-block {
+            /* ADDED: Subtle dark background for info blocks within sections */
             background-color: rgba(0, 0, 0, 0.3); /* Slightly less opaque than section background */
             padding: 15px;
             border-radius: 8px;
@@ -92,16 +89,6 @@
         }
         .info-block ul li {
             margin-bottom: 10px;
-        }
-        p {
-            /* ENSURED: No change to paragraph font size */
-            font-size: 1em; /* Keep it consistent with current size */
-            line-height: 1.6; /* Improves paragraph readability */
-        }
-        ul {
-            /* ENSURED: No change to list item font size */
-            font-size: 1em; /* Keep it consistent with current size */
-            line-height: 1.6;
         }
         #features h3 {
             text-align: center;
@@ -119,6 +106,7 @@
             padding: 40px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
+            /* ADDED: Background for CTA section */
             background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
@@ -140,7 +128,8 @@
         .faq-item {
             margin-bottom: 20px;
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.3);
+            /* ADDED: Subtle dark background for FAQ items */
+            background-color: rgba(0, 0, 0, 0.3); /* Same as info-block for consistency */
             border-radius: 8px;
         }
         .faq-item h3 {
@@ -150,6 +139,7 @@
         .contact-section {
             text-align: center;
             padding: 30px 20px;
+            /* ADDED: Background for contact section */
             background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
@@ -241,7 +231,7 @@
         .modal-close-button:hover {
             color: #fff;
         }
-
+        
         /* --- General Animations (for container) --- */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -304,7 +294,7 @@
                 <li><strong>Quote Generation & Sharing:</strong> After onboarding, service providers can generate quotes within the app and share them with clients in person or via WhatsApp/email.</li>
                 <li><strong>On-Site Service & Invoice Preparation:</strong> Upon service completion, providers can tally expenses (e.g., materials), input their employee details, and tap "get invoice."</li>
                 <li><strong>Automated Invoice Generation:</strong> The app will calculate total costs (expenses + labour + service fees based on onboarding setup) and generate a professional invoice with all the service provider's information, including the servicing employee's details and address. (Other compulsory professional invoice details will also be included).</li>
-                <li><strong>Flexible Payment Options with QR Code & Sharing:</b> A QR code will be generated on the provider's phone for immediate scanning by the client. Alternatively, the invoice can be shared with the client via email, WhatsApp, or other platforms.</li>
+                <li><strong>Flexible Payment Options with QR Code & Sharing:</strong> A QR code will be generated on the provider's phone for immediate scanning by the client. Alternatively, the invoice can be shared with the client via email, WhatsApp, or other platforms.</li>
                 <li><strong>Client-Side Payment Gateway:</strong> Clients will have a "pay now" button, redirecting them to a secure payment gateway to choose their preferred method: PayPal, other EFT gateways, card payment, or direct EFT (using the service provider's bank details provided during onboarding).</li>
                 <li><strong>Automated Payment Reminders:</strong> Clients with outstanding bills will receive automated payment reminders (via email, WhatsApp, or the app, if downloaded) every 24 hours.</li>
                 <li><strong>Real-Time Payment Tracking & Notifications:</strong> Service providers will receive instant notifications upon client payment, and the app will automatically log the payment, aiding in tracking outstanding invoices and payment history.</li>
@@ -380,7 +370,7 @@
             };
 
             // This line controls when the modal appears (3000ms = 3 seconds)
-            setTimeout(showModal, 3000);
+            setTimeout(showModal, 3000); 
 
             closeButton.addEventListener('click', hideModal);
             surveyModal.addEventListener('click', (event) => {
@@ -396,14 +386,14 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1
+                threshold: 0.1 
             };
 
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); 
                     }
                 });
             };
