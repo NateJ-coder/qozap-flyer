@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QoZap - Your Invoicing & Payment Solution (Under Development)</title>
     <style>
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+        }
         body {
             font-family: sans-serif;
             margin: 0;
@@ -21,7 +24,8 @@
         }
         .container {
             max-width: 960px;
-            margin: 120px auto 20px auto;
+            /* Adjusted margin-top to make space for new header content */
+            margin: 60px auto 20px auto;
             padding: 30px;
             background-color: rgba(0, 0, 0, 0); /* Still fully transparent for the main container */
             border-radius: 8px;
@@ -48,12 +52,76 @@
         .logo-header img:hover {
             transform: scale(1.05);
         }
+
+        /* NEW: Styles for the navigation hub and cards */
+        .navigation-hub {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for cards */
+            gap: 25px; /* Space between cards */
+            padding: 50px 20px;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the hub */
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-card {
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker card background */
+            padding: 25px;
+            border-radius: 10px;
+            text-decoration: none; /* Remove underline from link */
+            color: #fff; /* White text for cards */
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-card:hover {
+            background-color: rgba(41, 121, 255, 0.7); /* Lighter blue on hover */
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-card .icon {
+            font-size: 3em; /* Size for icons */
+            color: #64b5f6; /* Blue icon color */
+            margin-bottom: 15px;
+            display: block; /* Ensure icon is on its own line */
+        }
+        
+        /* If using image icons, use this: */
+        .nav-card .icon-img {
+            max-width: 60px; /* Adjust as needed */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .nav-card h3 {
+            font-size: 1.5em; /* Larger title for cards */
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #bbdefb; /* Lighter blue for card titles */
+        }
+
+        .nav-card p {
+            font-size: 0.95em; /* Slightly smaller description for cards */
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+
+        /* End NEW navigation styles */
+
+
         section {
             padding: 30px 20px;
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            /* ADDED: A subtle dark background for sections to improve text readability */
-            background-color: rgba(0, 0, 0, 0.4); /* Darker, slightly more opaque */
+            background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
         section:last-child {
@@ -78,8 +146,7 @@
             margin-bottom: 10px;
         }
         .info-block {
-            /* ADDED: Subtle dark background for info blocks within sections */
-            background-color: rgba(0, 0, 0, 0.3); /* Slightly less opaque than section background */
+            background-color: rgba(0, 0, 0, 0.3);
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -106,7 +173,6 @@
             padding: 40px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
-            /* ADDED: Background for CTA section */
             background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
@@ -128,8 +194,7 @@
         .faq-item {
             margin-bottom: 20px;
             padding: 15px;
-            /* ADDED: Subtle dark background for FAQ items */
-            background-color: rgba(0, 0, 0, 0.3); /* Same as info-block for consistency */
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
         .faq-item h3 {
@@ -139,7 +204,6 @@
         .contact-section {
             text-align: center;
             padding: 30px 20px;
-            /* ADDED: Background for contact section */
             background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
@@ -259,6 +323,29 @@
             <h1>Welcome To:</h1>
             <img src="logo.png" alt="QoZap Logo">
             <p>Your Guide to Simplified Invoicing and Payments with QoZap</p>
+        </div>
+
+        <div class="navigation-hub reveal-on-scroll">
+            <a href="#overview" class="nav-card">
+                <span class="icon">[i]</span> <h3>Overview</h3>
+                <p>Get to know QoZap's vision and core principles.</p>
+            </a>
+            <a href="#features" class="nav-card">
+                <span class="icon">[⭐]</span> <h3>Features</h3>
+                <p>Discover the planned functionalities of QoZap.</p>
+            </a>
+            <a href="#why-the-survey" class="nav-card">
+                <span class="icon">[📝]</span> <h3>Your Feedback</h3>
+                <p>Help us shape QoZap by taking our survey.</p>
+            </a>
+            <a href="#faq" class="nav-card">
+                <span class="icon">[❓]</span> <h3>FAQ</h3>
+                <p>Find answers to frequently asked questions.</p>
+            </a>
+            <a href="#contact" class="nav-card">
+                <span class="icon">[📞]</span> <h3>Contact Us</h3>
+                <p>Reach out for questions or collaborations.</p>
+            </a>
         </div>
 
         <section id="overview" class="reveal-on-scroll">
