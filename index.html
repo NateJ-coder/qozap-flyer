@@ -8,7 +8,6 @@
         body {
             font-family: sans-serif;
             margin: 0;
-            /* CORRECTED: Background image URL back to background.png */
             background-image: url('background.png'); 
             background-size: cover; 
             background-repeat: no-repeat;
@@ -22,9 +21,9 @@
         }
         .container {
             max-width: 960px;
-            margin: 120px auto 20px auto; /* Adjust 120px as needed for vertical alignment */
+            margin: 120px auto 20px auto;
             padding: 30px;
-            background-color: rgba(0, 0, 0, 0); /* Fully transparent - already correct */
+            background-color: rgba(0, 0, 0, 0); /* Still fully transparent for the main container */
             border-radius: 8px;
             opacity: 0;
             animation: fadeIn 1.5s forwards;
@@ -53,7 +52,8 @@
             padding: 30px 20px;
             margin-bottom: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            /* REMOVED: background-color for sections */
+            /* ADDED: A subtle dark background for sections to improve text readability */
+            background-color: rgba(0, 0, 0, 0.4); /* Darker, slightly more opaque */
             border-radius: 8px;
         }
         section:last-child {
@@ -63,16 +63,14 @@
             color: #64b5f6;
             margin-top: 0;
             margin-bottom: 25px;
-            text-align: center; /* This was for the 'Key Features' title, keeping it */
         }
         /* Adjusted for specific sections that had left/right alignment */
         #overview h2, #faq h2 {
-            text-align: left; /* Keep these aligned left as per your original script */
+            text-align: left;
         }
         #features h2 {
-            text-align: right; /* Keep this aligned right as per your original script */
+            text-align: right;
         }
-
 
         h3 {
             color: #bbdefb;
@@ -80,8 +78,8 @@
             margin-bottom: 10px;
         }
         .info-block {
-            /* CHANGED: Removed semi-transparent blue background */
-            background-color: rgba(0, 0, 0, 0); 
+            /* ADDED: Subtle dark background for info blocks within sections */
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly less opaque than section background */
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -108,7 +106,8 @@
             padding: 40px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 40px;
-            /* REMOVED: background-color */
+            /* ADDED: Background for CTA section */
+            background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
         .cta-button {
@@ -129,8 +128,8 @@
         .faq-item {
             margin-bottom: 20px;
             padding: 15px;
-            /* CHANGED: Removed semi-transparent blue background */
-            background-color: rgba(0, 0, 0, 0); 
+            /* ADDED: Subtle dark background for FAQ items */
+            background-color: rgba(0, 0, 0, 0.3); /* Same as info-block for consistency */
             border-radius: 8px;
         }
         .faq-item h3 {
@@ -140,7 +139,8 @@
         .contact-section {
             text-align: center;
             padding: 30px 20px;
-            /* REMOVED: background-color */
+            /* ADDED: Background for contact section */
+            background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
         }
         .contact-section p {
