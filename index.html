@@ -5,7 +5,315 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QoZap - Your Invoicing & Payment Solution (Under Development)</title>
     <style>
-        /* ... (Your existing CSS here, up to the end of .reveal-on-scroll.is-visible) ... */
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+        }
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-image: url('background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment: fixed;
+
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 960px;
+            /* Adjusted margin-top to make space for new header content */
+            margin: 60px auto 20px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0); /* Still fully transparent for the main container */
+            border-radius: 8px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .logo-header {
+            text-align: center;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .logo-header h1 {
+            color: #fff;
+            margin-bottom: 40px;
+        }
+        .logo-header img {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        .logo-header img:hover {
+            transform: scale(1.05);
+        }
+
+        /* NEW: Styles for the navigation hub and cards */
+        .navigation-hub {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for cards */
+            gap: 25px; /* Space between cards */
+            padding: 50px 20px;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the hub */
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-card {
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker card background */
+            padding: 25px;
+            border-radius: 10px;
+            text-decoration: none; /* Remove underline from link */
+            color: #fff; /* White text for cards */
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-card:hover {
+            background-color: rgba(41, 121, 255, 0.7); /* Lighter blue on hover */
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-card .icon {
+            font-size: 3em; /* Size for icons */
+            color: #64b5f6; /* Blue icon color */
+            margin-bottom: 15px;
+            display: block; /* Ensure icon is on its own line */
+        }
+        
+        /* If using image icons, use this: */
+        .nav-card .icon-img {
+            max-width: 60px; /* Adjust as needed */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .nav-card h3 {
+            font-size: 1.5em; /* Larger title for cards */
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #bbdefb; /* Lighter blue for card titles */
+        }
+
+        .nav-card p {
+            font-size: 0.95em; /* Slightly smaller description for cards */
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+
+        /* End NEW navigation styles */
+
+
+        section {
+            padding: 30px 20px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: #64b5f6;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        /* Adjusted for specific sections that had left/right alignment */
+        #overview h2, #faq h2 {
+            text-align: left;
+        }
+        #features h2 {
+            text-align: right;
+        }
+
+        h3 {
+            color: #bbdefb;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .info-block {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .info-block h3 {
+            margin-top: 0;
+        }
+        .info-block ul li {
+            margin-bottom: 10px;
+        }
+        #features h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #features ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+        #features ul li {
+            margin-bottom: 15px;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #2979ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0d47a1;
+            transform: translateY(-3px);
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        .faq-item h3 {
+            margin-top: 0;
+            color: #64b5f6;
+        }
+        .contact-section {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+        .contact-section p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-section a {
+            color: #2979ff;
+            text-decoration: none;
+        }
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+        .disclaimer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #9e9e9e;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        /* --- Pop-up Modal CSS (No changes here) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 0.3s, opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0s, opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: #1a237e;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content h2 {
+            color: #64b5f6;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .modal-content p {
+            color: #bbdefb;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.8em;
+            color: #bbdefb;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+        .modal-close-button:hover {
+            color: #fff;
+        }
+
+        /* --- General Animations (for container) --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* --- Scroll-Reveal Animations (No changes here) --- */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* NEW: Chatbot Pointer Styles */
         .chatbot-pointer-container {
@@ -89,7 +397,118 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo-header">
+            <h1>Welcome To:</h1>
+            <img src="logo.png" alt="QoZap Logo">
+            <p>Your Guide to Simplified Invoicing and Payments with QoZap</p>
         </div>
+
+        <div class="navigation-hub reveal-on-scroll">
+            <a href="#overview" class="nav-card">
+                <span class="icon">[i]</span> <h3>Overview</h3>
+                <p>Get to know QoZap's vision and core principles.</p>
+            </a>
+            <a href="#features" class="nav-card">
+                <span class="icon">[⭐]</span> <h3>Features</h3>
+                <p>Discover the planned functionalities of QoZap.</p>
+            </a>
+            <a href="#why-the-survey" class="nav-card">
+                <span class="icon">[📝]</span> <h3>Your Feedback</h3>
+                <p>Help us shape QoZap by taking our survey.</p>
+            </a>
+            <a href="#faq" class="nav-card">
+                <span class="icon">[❓]</span> <h3>FAQ</h3>
+                <p>Find answers to frequently asked questions.</p>
+            </a>
+            <a href="#contact" class="nav-card">
+                <span class="icon">[📞]</span> <h3>Contact Us</h3>
+                <p>Reach out for questions or collaborations.</p>
+            </a>
+        </div>
+
+        <section id="overview" class="reveal-on-scroll">
+            <h2>Overview</h2>
+            <div class="info-block">
+                <h3>What is QoZap?</h3>
+                <p>Imagine a world where invoicing and getting paid on the go is seamless and stress-free. That's the vision behind QoZap! Currently under development in Port Alfred, our mobile-friendly app is being crafted to simplify the lives of service providers who are always on the move, working directly with clients at their homes or various service locations. We recognize the common frustrations of juggling paperwork, tracking payments, and the delays that can come with it. QoZap is our planned solution to bring efficiency and ease to your daily workflow, letting you concentrate on what you do best – providing excellent service.</p>
+            </div>
+            <div class="info-block">
+                <h3>Core Principles (Planned)</h3>
+                <ul>
+                    <li><strong>Simplicity:</strong> We aim for an intuitive and user-friendly interface that anyone can navigate. Say goodbye to complex systems and hello to straightforward digital invoicing, once our development is complete.</li>
+                    <li><strong>Efficiency:</strong> QoZap is being engineered to help you create and send invoices quickly. Plus, with our planned integrated QR code payment system, getting paid faster is our goal.</li>
+                    <li><strong>Mobile-First:</strong> Designed with a mobile-first approach, we're ensuring a smooth and fully functional experience on your smartphone or tablet when the app launches.</li>
+                </ul>
+            </div>
+            <div class="info-block">
+                <h3>Target Audience</h3>
+                <p>Our initial focus is on empowering the vibrant community of service providers right here in Port Alfred. If you fall into any of these categories, QoZap is being designed with you in mind:</p>
+                <ul>
+                    <li><strong>Home Heroes:</strong> Cleaning services, maintenance crews, and anyone who keeps our homes running smoothly.</li>
+                    <li><strong>Mobile beauty and wellness:</strong> Mobile hairdressers, nail technicians, massage therapists, and wellness practitioners who bring their expertise to clients.</li>
+                    <li><strong>Knowledge Sharers:</strong> Tutors, personal trainers, and instructors who provide one-on-one guidance.</li>
+                    <li><strong>Pet Pals:</strong> Dedicated pet groomers, dog walkers, and animal caregivers who are always on the move.</li>
+                    <li><strong>Handy Helpers:</strong> Electricians, plumbers, carpenters, and all-around handymen who tackle repairs and installations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="reveal-on-scroll">
+            <h2>Key Features (Under Development)</h2>
+            <ul>
+                <li><strong>Quote Generation & Sharing:</strong> After onboarding, service providers can generate quotes within the app and share them with clients in person or via WhatsApp/email.</li>
+                <li><strong>On-Site Service & Invoice Preparation:</strong> Upon service completion, providers can tally expenses (e.g., materials), input their employee details, and tap "get invoice."</li>
+                <li><strong>Automated Invoice Generation:</strong> The app will calculate total costs (expenses + labour + service fees based on onboarding setup) and generate a professional invoice with all the service provider's information, including the servicing employee's details and address. (Other compulsory professional invoice details will also be included).</li>
+                <li><strong>Flexible Payment Options with QR Code & Sharing:</strong> A QR code will be generated on the provider's phone for immediate scanning by the client. Alternatively, the invoice can be shared with the client via email, WhatsApp, or other platforms.</li>
+                <li><strong>Client-Side Payment Gateway:</strong> Clients will have a "pay now" button, redirecting them to a secure payment gateway to choose their preferred method: PayPal, other EFT gateways, card payment, or direct EFT (using the service provider's bank details provided during onboarding).</li>
+                <li><strong>Automated Payment Reminders:</strong> Clients with outstanding bills will receive automated payment reminders (via email, WhatsApp, or the app, if downloaded) every 24 hours.</li>
+                <li><strong>Real-Time Payment Tracking & Notifications:</strong> Service providers will receive instant notifications upon client payment, and the app will automatically log the payment, aiding in tracking outstanding invoices and payment history.</li>
+                <li><strong>(Future Development) Enhanced Repeat Service:</strong> For returning clients, the app will store past service history. Upon payment for new services (via QR code or other methods), client payment details can be saved to streamline future transactions.</li>
+            </ul>
+        </section>
+
+        <section id="why-the-survey" class="cta-section reveal-on-scroll">
+            <h2>Help Us Build the Perfect QoZap for You!</h2>
+            <p>As we continue to develop QoZap, your insights as local service providers are invaluable. We want to ensure our app truly meets your needs and makes your work life easier. By taking a few moments to complete our survey, you'll be directly contributing to the development of features that matter most to you. Your feedback on usability, desired functionalities, and any potential challenges you foresee will be greatly appreciated and will help us shape QoZap into the ultimate tool for your business.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Share Your Feedback - Take Our Survey!</a>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item reveal-on-scroll">
+                <h3>What types of service providers will QoZap be for?</h3>
+                <p>Initially, we're focusing on supporting a wide range of on-location service professionals in Port Alfred, including home cleaning and maintenance services, mobile beauty and wellness providers, tutors and personal trainers, pet groomers and walkers, as well as handymen and various repair services.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>Will QoZap be free to use?</h3>
+                <p>We're currently exploring the best pricing model to ensure QoZap offers significant value without breaking the bank for our local service providers. We're committed to providing a cost-effective solution, and we'll be sharing more details about our pricing structure as we get closer to the official launch.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>How will clients pay through the QR code?</h3>
+                <p>When we implement the QR code payment feature in QoZap, your client will simply use their smartphone's camera or a QR code scanning app to scan it. This will instantly direct them to a secure online payment page where they can conveniently complete the transaction using their preferred payment method. We're planning to integrate with popular and trusted payment gateways.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>What will happen after a client pays?</h3>
+                <p>Once a client successfully makes a payment through the QR code system (once implemented), you'll receive an immediate notification within the QoZap app. The invoice status will also be automatically updated to "Paid" in your records.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>Will I be able to use QoZap on my phone and computer?</h3>
+                <p>QoZap is being developed with a strong mobile-first approach. We're also exploring the possibility of offering web access for certain functionalities in the future.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section reveal-on-scroll">
+            <h2>Contact Us</h2>
+            <p>Have questions, suggestions, or just want to learn more about QoZap's development? We'd love to hear from you! Feel free to reach out to our team using the contact details below:</p>
+            <p>Phone: <a href="tel:0606507692">060 650 7692</a></p>
+            <p>Email: <a href="mailto:qozappinfo@gmail.com">qozappinfo@gmail.com</a></p>
+        </section>
+
+        <div class="disclaimer reveal-on-scroll">
+            <p>Please note: QoZap is currently under development. The features and functionalities described on this page are planned and may be subject to change.</p>
+        </div>
+
+    </div>
 
     <div id="surveyModal" class="modal-overlay">
         <div class="modal-content">
@@ -173,13 +592,13 @@
     </script>
 
     <script>
-      window.__ow = window.__ow || {};
-      window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
-      window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
-      window.__ow.integration_name = "manual_settings";
-      window.__ow.product_name = "chatbot";   
-      ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+      window.__ow = window.__ow || {};
+      window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
+      window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
+      window.__ow.integration_name = "manual_settings";
+      window.__ow.product_name = "chatbot";    
+      ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
     </script>
     <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-    </body>
+</body>
 </html>
