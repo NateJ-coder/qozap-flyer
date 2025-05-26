@@ -182,7 +182,7 @@
             background-color: #2979ff;
             color: #fff;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 8добро8px;
             font-size: 1.2em;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -315,14 +315,14 @@
             transform: translateY(0);
         }
 
-        /* Chatbot Pointer Styles (Adjusted) */
+        /* Chatbot Pointer Styles (Further Adjusted) */
         .chatbot-pointer-container {
             position: fixed;
             bottom: 120px; /* Base position, adjusts for chatbot widget */
             right: 40px; /* Base position, adjusts for chatbot widget */
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-end; /* Align message to the right */
             z-index: 999; /* Ensure it's above other content but below modal */
             opacity: 0;
             visibility: hidden;
@@ -361,23 +361,20 @@
             border-top: 10px solid #2979ff; /* Matches message background */
         }
 
-        /* Removed complex rotation from .chatbot-pointer-arrow */
+        /* Simplified arrow, directly below the message, pointing down */
         .chatbot-pointer-arrow {
             width: 0;
             height: 0;
-            border-left: 15px solid transparent; /* Adjusted size */
-            border-right: 15px solid transparent; /* Adjusted size */
-            border-top: 15px solid #2979ff; /* Arrow color matching logo/brand, adjusted size */
-            border-bottom: none; /* No bottom border */
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #2979ff; /* Matches message background */
             position: absolute; /* Position relative to .chatbot-pointer-container */
-            bottom: -5px; /* Adjust to point closer to the button */
-            right: 25px; /* Adjust to point closer to the button */
+            bottom: 10px; /* Align with the bottom of the chatbot widget */
+            right: 25px; /* Align with the center of the chatbot widget */
             z-index: -1; /* Place behind the message for a cleaner look */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border-color: transparent transparent transparent #2979ff; /* Make a solid triangle that points */
-            transform: rotate(45deg); /* Keep a slight rotation if desired for style */
-            transform-origin: bottom right; /* Rotate from this point */
         }
+
 
         /* Media Query for smaller screens (mobile adjustments) */
         @media (max-width: 768px) {
@@ -398,18 +395,18 @@
                 right: 50%; /* Center the arrow below the message */
                 transform: translateX(50%);
             }
-            /* Adjust arrow position for mobile */
+            /* Adjust arrow position for mobile to point *towards* the icon */
             .chatbot-pointer-arrow {
-                position: relative; /* Make it relative to the message */
-                bottom: auto; /* Reset bottom */
-                right: auto; /* Reset right */
-                margin-top: -10px; /* Pull it up a bit */
-                transform: rotate(0deg); /* No rotation for mobile arrow, just points down */
-                border-left: 10px solid transparent;
-                border-right: 10px solid transparent;
-                border-top: 10px solid #2979ff;
+                position: absolute;
+                bottom: 5px; /* Adjust this value to control how close it is to the widget */
+                right: 25px; /* Adjust this value to align horizontally with the widget */
+                transform: rotate(45deg); /* Rotate to point diagonally */
+                transform-origin: bottom right; /* Rotate from this corner */
+                border-left: 15px solid transparent; /* Make it a bit bigger for visibility */
+                border-right: 15px solid transparent;
+                border-top: 15px solid #2979ff;
                 border-bottom: none;
-                z-index: auto;
+                z-index: -1; /* Keep it behind the message */
             }
         }
     </style>
