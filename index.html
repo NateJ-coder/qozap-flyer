@@ -349,7 +349,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 1px solid #fff; /* White border */
             pointer-events: auto; /* Allow clicks on the message itself */
-            /* Removed margin-bottom here as arrow is now absolutely positioned */
             position: relative; /* Needed for z-index */
             z-index: 2; /* Ensure message is above the arrow's start */
         }
@@ -394,7 +393,7 @@
                 font-size: 0.85em;
                 white-space: normal; /* Allow text to wrap on small screens */
                 text-align: center;
-                max-width: 200px; /* Limit message width on mobile */
+                max-width: 180px; /* Limit message width on mobile - adjust for new wording */
                 width: fit-content; /* Adjust width to content */
             }
             .chatbot-pointer-arrow {
@@ -554,7 +553,7 @@
     <div class="chatbot-widget-and-pointer-wrapper">
         <div id="chatbotPointer" class="chatbot-pointer-container">
             <div class="chatbot-pointer-message">
-                Click here to chat to our advanced conversational AI!
+                Chat to an assistant
             </div>
             <div class="chatbot-pointer-arrow">
                 <img src="arrow.png" alt="Chatbot Pointer Arrow">
