@@ -182,7 +182,7 @@
             background-color: #2979ff;
             color: #fff;
             text-decoration: none;
-            border-radius: 8добро8px;
+            border-radius: 8px;
             font-size: 1.2em;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -315,7 +315,7 @@
             transform: translateY(0);
         }
 
-        /* Chatbot Pointer Styles (Further Adjusted) */
+        /* Chatbot Pointer Styles with Image Arrow */
         .chatbot-pointer-container {
             position: fixed;
             bottom: 120px; /* Base position, adjusts for chatbot widget */
@@ -349,7 +349,7 @@
             border: 1px solid #fff; /* White border */
         }
 
-        .chatbot-pointer-message::after { /* The arrow part of the message bubble */
+        .chatbot-pointer-message::after { /* The arrow part of the message bubble (can remove if image arrow is sufficient) */
             content: '';
             position: absolute;
             bottom: -10px; /* Positions the arrow pointing down from the message */
@@ -361,18 +361,17 @@
             border-top: 10px solid #2979ff; /* Matches message background */
         }
 
-        /* Simplified arrow, directly below the message, pointing down */
-        .chatbot-pointer-arrow {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #2979ff; /* Matches message background */
-            position: absolute; /* Position relative to .chatbot-pointer-container */
-            bottom: 10px; /* Align with the bottom of the chatbot widget */
-            right: 25px; /* Align with the center of the chatbot widget */
-            z-index: -1; /* Place behind the message for a cleaner look */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        /* Styles for the image arrow */
+        .chatbot-pointer-arrow img {
+            position: absolute;
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+            bottom: -15px; /* Adjust to point to the chatbot icon */
+            right: 5px; /* Adjust to align horizontally with the chatbot icon */
+            transform: rotate(45deg); /* Rotate the image to point diagonally upwards-right */
+            transform-origin: 50% 50%; /* Rotate from its center */
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
+            z-index: 1; /* Ensure it's above other elements if needed */
         }
 
 
@@ -395,18 +394,13 @@
                 right: 50%; /* Center the arrow below the message */
                 transform: translateX(50%);
             }
-            /* Adjust arrow position for mobile to point *towards* the icon */
-            .chatbot-pointer-arrow {
-                position: absolute;
-                bottom: 5px; /* Adjust this value to control how close it is to the widget */
-                right: 25px; /* Adjust this value to align horizontally with the widget */
-                transform: rotate(45deg); /* Rotate to point diagonally */
-                transform-origin: bottom right; /* Rotate from this corner */
-                border-left: 15px solid transparent; /* Make it a bit bigger for visibility */
-                border-right: 15px solid transparent;
-                border-top: 15px solid #2979ff;
-                border-bottom: none;
-                z-index: -1; /* Keep it behind the message */
+            /* Adjust image arrow position for mobile */
+            .chatbot-pointer-arrow img {
+                width: 40px; /* Smaller on mobile */
+                bottom: 10px; /* Adjust to point closer to the widget */
+                right: 15px; /* Adjust to align with the widget */
+                transform: rotate(45deg); /* Keep diagonal for the mobile view */
+                transform-origin: 50% 50%;
             }
         }
     </style>
@@ -545,7 +539,9 @@
         <div class="chatbot-pointer-message">
             Click here to chat to our advanced conversational AI!
         </div>
-        <div class="chatbot-pointer-arrow"></div>
+        <div class="chatbot-pointer-arrow">
+            <img src="arrow.png" alt="Chatbot Pointer Arrow">
+        </div>
     </div>
 
     <script>
