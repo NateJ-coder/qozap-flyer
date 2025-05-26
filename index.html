@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QoZap - Your Invoicing & Payment Solution (Under Development)</title>
   <style>
     html {
@@ -21,6 +21,34 @@
       display: flex;
       flex-direction: column;
     }
+    .container {
+      max-width: 960px;
+      margin: 60px auto 20px auto;
+      padding: 30px 50px;
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 8px;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+    .logo-header {
+      text-align: center;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo-header h1 {
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    .logo-header img {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+    .logo-header img:hover {
+      transform: scale(1.05);
+    }
+    /* --- Chatbot Pointer Styles --- */
     .chatbot-widget-and-pointer-wrapper {
       position: fixed;
       bottom: 85px;
@@ -100,24 +128,30 @@
         transform: rotate(60deg) translateY(-6px) translateX(6px);
       }
     }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="logo-header">
+      <h1>Welcome to QoZap</h1>
+      <p>Your one-stop solution for smart invoicing and real-time payments.</p>
+    </div>
+  </div>
+
+  <!-- Chatbot pointer block -->
   <div class="chatbot-widget-and-pointer-wrapper">
     <div id="chatbotPointer" class="chatbot-pointer-container">
       <div class="chatbot-pointer-message">
         Click here to chat to our advanced conversational AI!
       </div>
       <div class="chatbot-pointer-arrow">
-        <img src="arrow.png" alt="Chatbot Pointer Arrow">
+        <img src="arrow.png" alt="Chatbot Pointer Arrow" />
       </div>
     </div>
-  </div>
-
-  <!-- Example main content -->
-  <div class="container">
-    <h1>Welcome to QoZap</h1>
-    <p>Your one-stop solution for smart invoicing and real-time payments.</p>
   </div>
 
   <script>
