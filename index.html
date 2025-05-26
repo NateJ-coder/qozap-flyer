@@ -329,7 +329,8 @@
             visibility: hidden;
             transition: opacity 0.5s ease, visibility 0.5s ease;
             pointer-events: none; /* Allows clicks to pass through when hidden */
-            margin-bottom: 10px; /* Space between the pointer combo and the chatbot widget */
+            margin-bottom: 8px; /* Adjusted space between the pointer combo and the chatbot widget */
+            position: relative; /* Needed for child absolute positioning */
         }
 
         .chatbot-pointer-container.visible {
@@ -348,24 +349,28 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 1px solid #fff; /* White border */
             pointer-events: auto; /* Allow clicks on the message itself */
-            margin-bottom: -15px; /* Overlap with the arrow to make it look connected */
+            /* Removed margin-bottom here as arrow is now absolutely positioned */
             position: relative; /* Needed for z-index */
             z-index: 2; /* Ensure message is above the arrow's start */
         }
         
         /* Styles for the image arrow */
         .chatbot-pointer-arrow {
-            position: relative; /* Allows positioning of the image inside */
+            /* This div acts as a positioning context for the arrow image */
+            position: absolute; /* Position relative to .chatbot-pointer-container */
             width: 70px; /* Control the overall size of the arrow area */
             height: 70px; /* Control the overall size of the arrow area */
+            bottom: -50px; /* Position the arrow below the message, adjust as needed */
+            right: 0px; /* Align to the right side of the message container */
             pointer-events: none; /* The container itself should not block clicks */
+            overflow: hidden; /* Hide parts of the arrow that go outside this div */
         }
+
         .chatbot-pointer-arrow img {
             width: 100%; /* Make the image fill its container */
             height: auto;
-            /* Adjusted transform for better pointing on desktop */
-            transform: rotate(50deg) translateY(-25px) translateX(25px); /* Tweak these values */
-            transform-origin: bottom right; /* Point from message to chatbot */
+            transform: rotate(50deg); /* Adjust rotation as needed */
+            transform-origin: top left; /* Pivot from the top left of the image */
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
             position: absolute;
             bottom: 0;
@@ -391,15 +396,15 @@
                 text-align: center;
                 max-width: 200px; /* Limit message width on mobile */
                 width: fit-content; /* Adjust width to content */
-                margin-bottom: -10px; /* Less overlap on mobile */
             }
             .chatbot-pointer-arrow {
                 width: 60px; /* Smaller arrow on mobile */
                 height: 60px;
+                bottom: -40px; /* Adjust for mobile */
+                right: 0px; /* Align to the right side of the message container */
             }
             .chatbot-pointer-arrow img {
-                /* Adjusted transform for better pointing on mobile */
-                transform: rotate(50deg) translateY(-18px) translateX(18px); /* Tweak these values for mobile */
+                transform: rotate(50deg); /* Mobile rotation */
             }
         }
 
@@ -407,9 +412,11 @@
             .chatbot-pointer-arrow {
                 width: 50px;
                 height: 50px;
+                bottom: -30px; /* Adjust for very small screens */
+                right: 0px; /* Align to the right side of the message container */
             }
             .chatbot-pointer-arrow img {
-                transform: rotate(50deg) translateY(-12px) translateX(12px); /* Further adjustments for very small screens */
+                transform: rotate(50deg); /* Very small screen rotation */
             }
         }
     </style>
