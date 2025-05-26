@@ -343,35 +343,47 @@
             border-radius: 8px;
             font-size: 0.9em;
             white-space: nowrap; /* Keep text on one line for desktop */
-            margin-bottom: 10px; /* Space between message and arrow */
+            /* Removed margin-bottom here as the image arrow will take its place below */
             position: relative;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 1px solid #fff; /* White border */
         }
 
-        .chatbot-pointer-message::after { /* The arrow part of the message bubble (can remove if image arrow is sufficient) */
+        /* REMOVED: The ::after pseudo-element that created the small arrow */
+        /*
+        .chatbot-pointer-message::after {
             content: '';
             position: absolute;
-            bottom: -10px; /* Positions the arrow pointing down from the message */
-            right: 15px; /* Points towards the chatbot widget */
+            bottom: -10px;
+            right: 15px;
             width: 0;
             height: 0;
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-top: 10px solid #2979ff; /* Matches message background */
+            border-top: 10px solid #2979ff;
         }
+        */
 
         /* Styles for the image arrow */
+        .chatbot-pointer-arrow {
+            position: absolute; /* Position relative to .chatbot-pointer-container */
+            bottom: -30px; /* Adjust to move the arrow image below the message */
+            right: 0px; /* Adjust to align with the chatbot icon */
+            width: 60px; /* Set a specific width for the container of the arrow image */
+            height: 60px; /* Set a specific height for the container of the arrow image */
+            overflow: hidden; /* Hide parts of the image if it exceeds this container */
+            pointer-events: none; /* The container itself should not block clicks */
+        }
+
         .chatbot-pointer-arrow img {
-            position: absolute;
-            width: 50px; /* Adjust size as needed */
+            width: 100%; /* Make the image fill its container */
             height: auto;
-            bottom: -15px; /* Adjust to point to the chatbot icon */
-            right: 5px; /* Adjust to align horizontally with the chatbot icon */
-            transform: rotate(45deg); /* Rotate the image to point diagonally upwards-right */
-            transform-origin: 50% 50%; /* Rotate from its center */
+            transform: rotate(45deg); /* Rotate the image to point towards the chatbot icon */
+            transform-origin: bottom right; /* Adjust rotation origin if needed */
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
-            z-index: 1; /* Ensure it's above other elements if needed */
+            position: absolute; /* Position the image precisely within its container */
+            bottom: 0;
+            right: 0;
         }
 
 
@@ -386,21 +398,20 @@
             .chatbot-pointer-message {
                 font-size: 0.85em;
                 white-space: normal; /* Allow text to wrap on small screens */
-                margin-bottom: 5px;
+                margin-bottom: 5px; /* Adjust space after message now that ::after is gone */
                 text-align: center;
                 max-width: 250px; /* Limit message width */
             }
-            .chatbot-pointer-message::after {
-                right: 50%; /* Center the arrow below the message */
-                transform: translateX(50%);
-            }
             /* Adjust image arrow position for mobile */
+            .chatbot-pointer-arrow {
+                bottom: -20px; /* Adjust for mobile to point correctly */
+                right: 0px; /* Adjust for mobile to align correctly */
+                width: 50px; /* Smaller on mobile */
+                height: 50px; /* Smaller on mobile */
+            }
             .chatbot-pointer-arrow img {
-                width: 40px; /* Smaller on mobile */
-                bottom: 10px; /* Adjust to point closer to the widget */
-                right: 15px; /* Adjust to align with the widget */
                 transform: rotate(45deg); /* Keep diagonal for the mobile view */
-                transform-origin: 50% 50%;
+                transform-origin: bottom right;
             }
         }
     </style>
