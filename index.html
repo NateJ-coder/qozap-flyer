@@ -317,7 +317,6 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end; /* Aligns items to the right */
-            /* gap: 10px; /* Removed gap, arrow positioning handles spacing */
             pointer-events: none; /* Allows clicks to pass through the wrapper itself */
         }
 
@@ -364,8 +363,8 @@
         .chatbot-pointer-arrow img {
             width: 100%; /* Make the image fill its container */
             height: auto;
-            /* Adjust transform based on your specific arrow image and desired pointer */
-            transform: rotate(50deg) translateY(-20px) translateX(20px); /* Tweak these values */
+            /* Adjusted transform for better pointing on desktop */
+            transform: rotate(50deg) translateY(-25px) translateX(25px); /* Tweak these values */
             transform-origin: bottom right; /* Point from message to chatbot */
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
             position: absolute;
@@ -399,7 +398,8 @@
                 height: 60px;
             }
             .chatbot-pointer-arrow img {
-                transform: rotate(50deg) translateY(-15px) translateX(15px); /* Tweak these values for mobile */
+                /* Adjusted transform for better pointing on mobile */
+                transform: rotate(50deg) translateY(-18px) translateX(18px); /* Tweak these values for mobile */
             }
         }
 
@@ -409,7 +409,7 @@
                 height: 50px;
             }
             .chatbot-pointer-arrow img {
-                transform: rotate(50deg) translateY(-10px) translateX(10px);
+                transform: rotate(50deg) translateY(-12px) translateX(12px); /* Further adjustments for very small screens */
             }
         }
     </style>
