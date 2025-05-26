@@ -307,117 +307,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* NEW: Wrapper for the chatbot widget and the pointer/message */
-        .chatbot-widget-and-pointer-wrapper {
-            position: fixed;
-            bottom: 20px; /* Overall distance from the bottom of the viewport */
-            right: 20px; /* Overall distance from the right of the viewport */
-            z-index: 9999; /* Ensure it's above other elements */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; /* Aligns items to the right */
-            pointer-events: none; /* Allows clicks to pass through the wrapper itself */
-        }
-
-        /* Container for the "Click here to chat..." message and the arrow */
-        .chatbot-pointer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; /* Align message and arrow to the right */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-            pointer-events: none; /* Allows clicks to pass through when hidden */
-            margin-bottom: 8px; /* Adjusted space between the pointer combo and the chatbot widget */
-            position: relative; /* Needed for child absolute positioning */
-        }
-
-        .chatbot-pointer-container.visible {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto; /* Allow clicks on the message itself when visible */
-        }
-
-        .chatbot-pointer-message {
-            background-color: #2979ff; /* Blue from your CTA/branding */
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            white-space: nowrap; /* Keep text on one line for desktop */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border: 1px solid #fff; /* White border */
-            pointer-events: auto; /* Allow clicks on the message itself */
-            position: relative; /* Needed for z-index */
-            z-index: 2; /* Ensure message is above the arrow's start */
-        }
-        
-        /* Styles for the image arrow */
-        .chatbot-pointer-arrow {
-            /* This div acts as a positioning context for the arrow image */
-            position: absolute; /* Position relative to .chatbot-pointer-container */
-            width: 70px; /* Control the overall size of the arrow area */
-            height: 70px; /* Control the overall size of the arrow area */
-            bottom: -50px; /* Position the arrow below the message, adjust as needed */
-            right: 0px; /* Align to the right side of the message container */
-            pointer-events: none; /* The container itself should not block clicks */
-            overflow: hidden; /* Hide parts of the arrow that go outside this div */
-        }
-
-        .chatbot-pointer-arrow img {
-            width: 100%; /* Make the image fill its container */
-            height: auto;
-            transform: rotate(50deg); /* Adjust rotation as needed */
-            transform-origin: top left; /* Pivot from the top left of the image */
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            z-index: 1; /* Ensure arrow is below the message but above background */
-        }
-
-        /* Media Query for smaller screens (mobile adjustments) */
-        @media (max-width: 768px) {
-            .chatbot-widget-and-pointer-wrapper {
-                bottom: 15px; /* Slightly closer to the bottom on mobile */
-                right: 15px; /* Slightly closer to the right on mobile */
-                width: calc(100% - 30px); /* Allow wrapper to take up more width */
-                align-items: center; /* Center the message and arrow for mobile */
-            }
-            .chatbot-pointer-container {
-                align-items: center; /* Center arrow/message for mobile */
-                margin-bottom: 5px; /* Less space between pointer and widget on mobile */
-            }
-            .chatbot-pointer-message {
-                font-size: 0.85em;
-                white-space: normal; /* Allow text to wrap on small screens */
-                text-align: center;
-                max-width: 180px; /* Limit message width on mobile - adjust for new wording */
-                width: fit-content; /* Adjust width to content */
-            }
-            .chatbot-pointer-arrow {
-                width: 60px; /* Smaller arrow on mobile */
-                height: 60px;
-                bottom: -40px; /* Adjust for mobile */
-                right: 0px; /* Align to the right side of the message container */
-            }
-            .chatbot-pointer-arrow img {
-                transform: rotate(50deg); /* Mobile rotation */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .chatbot-pointer-arrow {
-                width: 50px;
-                height: 50px;
-                bottom: -30px; /* Adjust for very small screens */
-                right: 0px; /* Align to the right side of the message container */
-            }
-            .chatbot-pointer-arrow img {
-                transform: rotate(50deg); /* Very small screen rotation */
-            }
-        }
     </style>
 </head>
 <body>
@@ -550,27 +439,6 @@
         </div>
     </div>
 
-    <div class="chatbot-widget-and-pointer-wrapper">
-        <div id="chatbotPointer" class="chatbot-pointer-container">
-            <div class="chatbot-pointer-message">
-                Chat to an assistant
-            </div>
-            <div class="chatbot-pointer-arrow">
-                <img src="arrow.png" alt="Chatbot Pointer Arrow">
-            </div>
-        </div>
-
-        <script>
-            window.__ow = window.__ow || {};
-            window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
-            window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
-            window.__ow.integration_name = "manual_settings";
-            window.__ow.product_name = "chatbot";     
-            ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
-        </script>
-        <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-    </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -621,19 +489,6 @@
             revealElements.forEach(element => {
                 observer.observe(element);
             });
-
-            // Chatbot Pointer Logic
-            const chatbotPointer = document.getElementById('chatbotPointer');
-
-            // Show the pointer after a delay (e.g., 5 seconds)
-            setTimeout(() => {
-                chatbotPointer.classList.add('visible');
-            }, 5000); // 5000 milliseconds = 5 seconds
-
-            // Hide the pointer after it has been visible for a few seconds (e.g., 7 seconds after showing)
-            setTimeout(() => {
-                chatbotPointer.classList.remove('visible');
-            }, 12000); // 5000ms (delay to show) + 7000ms (visible duration) = 12000ms total
         });
     </script>
 </body>
