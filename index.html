@@ -307,6 +307,29 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* NEW: Wrapper for the chatbot widget (keeping this to contain the chatbot script) */
+        .chatbot-widget-and-pointer-wrapper {
+            position: fixed;
+            bottom: 20px; /* Overall distance from the bottom of the viewport */
+            right: 20px; /* Overall distance from the right of the viewport */
+            z-index: 9999; /* Ensure it's above other elements */
+            /* Removed flex properties as the pointer is gone */
+            /* Removed pointer-events: none; as the wrapper is now just for the widget */
+        }
+
+        /* Removed .chatbot-pointer-container and its nested styles */
+        /* Removed .chatbot-pointer-message styles */
+        /* Removed .chatbot-pointer-arrow styles */
+
+        /* Media Query for smaller screens (mobile adjustments) - only keeping wrapper adjustments if any */
+        @media (max-width: 768px) {
+            .chatbot-widget-and-pointer-wrapper {
+                bottom: 15px; /* Slightly closer to the bottom on mobile */
+                right: 15px; /* Slightly closer to the right on mobile */
+                /* Removed width and align-items as the pointer is gone */
+            }
+        }
     </style>
 </head>
 <body>
@@ -349,7 +372,7 @@
             <div class="info-block">
                 <h3>Core Principles (Planned)</h3>
                 <ul>
-                    <li><strong>Simplicity:</strong> We aim for an intuitive and user-friendly interface that anyone can navigate. Say goodbye to complex systems and hello to straightforward digital invoicing, once our development is complete.</li>
+                    <li><strong>Simplicity:</strong> We aim for an Sandpoint and user-friendly interface that anyone can navigate. Say goodbye to complex systems and hello to straightforward digital invoicing, once our development is complete.</li>
                     <li><strong>Efficiency:</strong> QoZap is being engineered to help you create and send invoices quickly. Plus, with our planned integrated QR code payment system, getting paid faster is our goal.</li>
                     <li><strong>Mobile-First:</strong> Designed with a mobile-first approach, we're ensuring a smooth and fully functional experience on your smartphone or tablet when the app launches.</li>
                 </ul>
@@ -437,6 +460,18 @@
             <p>Help us shape the future of QoZap by taking our quick survey. Your insights ensure we build the perfect solution for service providers like you!</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take the Survey Now!</a>
         </div>
+    </div>
+
+    <div class="chatbot-widget-and-pointer-wrapper">
+        <script>
+            window.__ow = window.__ow || {};
+            window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
+            window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
+            window.__ow.integration_name = "manual_settings";
+            window.__ow.product_name = "chatbot";     
+            ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+        </script>
+        <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
     </div>
 
 
