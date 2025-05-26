@@ -24,10 +24,9 @@
         }
         .container {
             max-width: 960px;
-            /* Adjusted margin-top to make space for new header content */
             margin: 60px auto 20px auto;
             padding: 30px;
-            background-color: rgba(0, 0, 0, 0); /* Still fully transparent for the main container */
+            background-color: rgba(0, 0, 0, 0);
             border-radius: 8px;
             opacity: 0;
             animation: fadeIn 1.5s forwards;
@@ -53,14 +52,13 @@
             transform: scale(1.05);
         }
 
-        /* NEW: Styles for the navigation hub and cards */
         .navigation-hub {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for cards */
-            gap: 25px; /* Space between cards */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
             padding: 50px 20px;
             margin-bottom: 40px;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the hub */
+            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
@@ -68,11 +66,11 @@
         }
 
         .nav-card {
-            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker card background */
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 25px;
             border-radius: 10px;
-            text-decoration: none; /* Remove underline from link */
-            color: #fff; /* White text for cards */
+            text-decoration: none;
+            color: #fff;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -82,40 +80,36 @@
         }
 
         .nav-card:hover {
-            background-color: rgba(41, 121, 255, 0.7); /* Lighter blue on hover */
-            transform: translateY(-5px); /* Lift effect on hover */
+            background-color: rgba(41, 121, 255, 0.7);
+            transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
         .nav-card .icon {
-            font-size: 3em; /* Size for icons */
-            color: #64b5f6; /* Blue icon color */
+            font-size: 3em;
+            color: #64b5f6;
             margin-bottom: 15px;
-            display: block; /* Ensure icon is on its own line */
+            display: block;
         }
         
-        /* If using image icons, use this: */
         .nav-card .icon-img {
-            max-width: 60px; /* Adjust as needed */
+            max-width: 60px;
             height: auto;
             margin-bottom: 15px;
         }
 
         .nav-card h3 {
-            font-size: 1.5em; /* Larger title for cards */
+            font-size: 1.5em;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #bbdefb; /* Lighter blue for card titles */
+            color: #bbdefb;
         }
 
         .nav-card p {
-            font-size: 0.95em; /* Slightly smaller description for cards */
+            font-size: 0.95em;
             line-height: 1.5;
             color: #e0e0e0;
         }
-
-        /* End NEW navigation styles */
-
 
         section {
             padding: 30px 20px;
@@ -132,7 +126,6 @@
             margin-top: 0;
             margin-bottom: 25px;
         }
-        /* Adjusted for specific sections that had left/right alignment */
         #overview h2, #faq h2 {
             text-align: left;
         }
@@ -315,20 +308,20 @@
             transform: translateY(0);
         }
 
-        /* Chatbot Widget and Pointer Container */
+        /* NEW: Wrapper for the chatbot widget and the pointer/message */
         .chatbot-widget-and-pointer-wrapper {
             position: fixed;
-            bottom: 20px; /* Adjust this to control the overall height from the bottom */
-            right: 20px; /* Adjust this to control the overall distance from the right */
-            z-index: 9999; /* Higher than other fixed elements like modal overlay (1000) */
+            bottom: 20px; /* Overall distance from the bottom of the viewport */
+            right: 20px; /* Overall distance from the right of the viewport */
+            z-index: 9999; /* Ensure it's above other elements */
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Align pointer message and arrow to the right edge */
-            gap: 10px; /* Space between message and arrow */
+            align-items: flex-end; /* Aligns items to the right */
+            /* gap: 10px; /* Removed gap, arrow positioning handles spacing */
             pointer-events: none; /* Allows clicks to pass through the wrapper itself */
         }
 
-        /* Chatbot Pointer Container (message + arrow) */
+        /* Container for the "Click here to chat..." message and the arrow */
         .chatbot-pointer-container {
             display: flex;
             flex-direction: column;
@@ -337,12 +330,13 @@
             visibility: hidden;
             transition: opacity 0.5s ease, visibility 0.5s ease;
             pointer-events: none; /* Allows clicks to pass through when hidden */
+            margin-bottom: 10px; /* Space between the pointer combo and the chatbot widget */
         }
 
         .chatbot-pointer-container.visible {
             opacity: 1;
             visibility: visible;
-            pointer-events: auto; /* Allow clicks when visible on the message */
+            pointer-events: auto; /* Allow clicks on the message itself when visible */
         }
 
         .chatbot-pointer-message {
@@ -355,55 +349,67 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 1px solid #fff; /* White border */
             pointer-events: auto; /* Allow clicks on the message itself */
+            margin-bottom: -15px; /* Overlap with the arrow to make it look connected */
+            position: relative; /* Needed for z-index */
+            z-index: 2; /* Ensure message is above the arrow's start */
         }
         
         /* Styles for the image arrow */
+        .chatbot-pointer-arrow {
+            position: relative; /* Allows positioning of the image inside */
+            width: 70px; /* Control the overall size of the arrow area */
+            height: 70px; /* Control the overall size of the arrow area */
+            pointer-events: none; /* The container itself should not block clicks */
+        }
         .chatbot-pointer-arrow img {
-            width: 70px; /* Adjust this for the arrow's size */
+            width: 100%; /* Make the image fill its container */
             height: auto;
-            transform: rotate(60deg) translateX(5px); /* Rotate and slightly move to point accurately */
-            transform-origin: bottom right; /* Rotate around the bottom right corner */
+            /* Adjust transform based on your specific arrow image and desired pointer */
+            transform: rotate(50deg) translateY(-20px) translateX(20px); /* Tweak these values */
+            transform-origin: bottom right; /* Point from message to chatbot */
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
-            margin-top: -30px; /* Pull the arrow up to overlap the message slightly */
-            margin-right: -10px; /* Pull the arrow to the right to align better */
-            pointer-events: none; /* The arrow image itself should not block clicks */
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1; /* Ensure arrow is below the message but above background */
         }
 
         /* Media Query for smaller screens (mobile adjustments) */
         @media (max-width: 768px) {
             .chatbot-widget-and-pointer-wrapper {
-                bottom: 15px; /* Adjust overall height from bottom for mobile */
-                right: 15px; /* Adjust overall distance from right for mobile */
+                bottom: 15px; /* Slightly closer to the bottom on mobile */
+                right: 15px; /* Slightly closer to the right on mobile */
+                width: calc(100% - 30px); /* Allow wrapper to take up more width */
+                align-items: center; /* Center the message and arrow for mobile */
             }
             .chatbot-pointer-container {
-                align-items: center; /* Center arrow/message above the chatbot bubble */
-                width: calc(100% - 30px); /* Allow message to take more width, considering padding */
-                right: 0; /* Reset right position for centering within wrapper */
+                align-items: center; /* Center arrow/message for mobile */
+                margin-bottom: 5px; /* Less space between pointer and widget on mobile */
             }
             .chatbot-pointer-message {
                 font-size: 0.85em;
                 white-space: normal; /* Allow text to wrap on small screens */
                 text-align: center;
-                max-width: 250px; /* Limit message width */
+                max-width: 200px; /* Limit message width on mobile */
                 width: fit-content; /* Adjust width to content */
-                margin-left: auto; /* Center the message if wrapper is wider */
-                margin-right: auto;
+                margin-bottom: -10px; /* Less overlap on mobile */
+            }
+            .chatbot-pointer-arrow {
+                width: 60px; /* Smaller arrow on mobile */
+                height: 60px;
             }
             .chatbot-pointer-arrow img {
-                width: 55px; /* Smaller on mobile */
-                height: auto;
-                transform: rotate(60deg) translateX(0px); /* Adjust rotation and translation for mobile */
-                transform-origin: bottom right;
-                margin-top: -25px; /* Adjust overlap for mobile */
-                margin-right: -15px; /* Adjust right pull for mobile */
+                transform: rotate(50deg) translateY(-15px) translateX(15px); /* Tweak these values for mobile */
             }
         }
 
         @media (max-width: 480px) {
+            .chatbot-pointer-arrow {
+                width: 50px;
+                height: 50px;
+            }
             .chatbot-pointer-arrow img {
-                width: 45px; /* Even smaller on very small mobile */
-                margin-top: -20px;
-                margin-right: -10px;
+                transform: rotate(50deg) translateY(-10px) translateX(10px);
             }
         }
     </style>
