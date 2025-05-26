@@ -315,15 +315,24 @@
             transform: translateY(0);
         }
 
-        /* Chatbot Pointer Styles with Image Arrow */
-        .chatbot-pointer-container {
+        /* Chatbot Widget and Pointer Container */
+        .chatbot-widget-and-pointer-wrapper {
             position: fixed;
-            bottom: 120px; /* Base position, adjusts for chatbot widget */
-            right: 40px; /* Base position, adjusts for chatbot widget */
+            bottom: 20px; /* Adjust this to control the overall height from the bottom */
+            right: 20px; /* Adjust this to control the overall distance from the right */
+            z-index: 9999; /* Higher than other fixed elements like modal overlay (1000) */
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Align message to the right */
-            z-index: 999; /* Ensure it's above other content but below modal */
+            align-items: flex-end; /* Align pointer message and arrow to the right edge */
+            gap: 10px; /* Space between message and arrow */
+            pointer-events: none; /* Allows clicks to pass through the wrapper itself */
+        }
+
+        /* Chatbot Pointer Container (message + arrow) */
+        .chatbot-pointer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align message and arrow to the right */
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -333,7 +342,7 @@
         .chatbot-pointer-container.visible {
             opacity: 1;
             visibility: visible;
-            pointer-events: auto; /* Allow clicks when visible */
+            pointer-events: auto; /* Allow clicks when visible on the message */
         }
 
         .chatbot-pointer-message {
@@ -343,75 +352,58 @@
             border-radius: 8px;
             font-size: 0.9em;
             white-space: nowrap; /* Keep text on one line for desktop */
-            /* Removed margin-bottom here as the image arrow will take its place below */
-            position: relative;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 1px solid #fff; /* White border */
+            pointer-events: auto; /* Allow clicks on the message itself */
         }
-
-        /* REMOVED: The ::after pseudo-element that created the small arrow */
-        /*
-        .chatbot-pointer-message::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 15px;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #2979ff;
-        }
-        */
-
+        
         /* Styles for the image arrow */
-        .chatbot-pointer-arrow {
-            position: absolute; /* Position relative to .chatbot-pointer-container */
-            bottom: -30px; /* Adjust to move the arrow image below the message */
-            right: 0px; /* Adjust to align with the chatbot icon */
-            width: 60px; /* Set a specific width for the container of the arrow image */
-            height: 60px; /* Set a specific height for the container of the arrow image */
-            overflow: hidden; /* Hide parts of the image if it exceeds this container */
-            pointer-events: none; /* The container itself should not block clicks */
-        }
-
         .chatbot-pointer-arrow img {
-            width: 100%; /* Make the image fill its container */
+            width: 70px; /* Adjust this for the arrow's size */
             height: auto;
-            transform: rotate(45deg); /* Rotate the image to point towards the chatbot icon */
-            transform-origin: bottom right; /* Adjust rotation origin if needed */
+            transform: rotate(60deg) translateX(5px); /* Rotate and slightly move to point accurately */
+            transform-origin: bottom right; /* Rotate around the bottom right corner */
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* Add a subtle shadow */
-            position: absolute; /* Position the image precisely within its container */
-            bottom: 0;
-            right: 0;
+            margin-top: -30px; /* Pull the arrow up to overlap the message slightly */
+            margin-right: -10px; /* Pull the arrow to the right to align better */
+            pointer-events: none; /* The arrow image itself should not block clicks */
         }
-
 
         /* Media Query for smaller screens (mobile adjustments) */
         @media (max-width: 768px) {
+            .chatbot-widget-and-pointer-wrapper {
+                bottom: 15px; /* Adjust overall height from bottom for mobile */
+                right: 15px; /* Adjust overall distance from right for mobile */
+            }
             .chatbot-pointer-container {
-                bottom: 100px; /* Slightly lower for mobile */
-                right: 20px; /* Closer to the edge for mobile */
-                align-items: center; /* Center arrow/message */
-                width: calc(100% - 40px); /* Allow message to take more width */
+                align-items: center; /* Center arrow/message above the chatbot bubble */
+                width: calc(100% - 30px); /* Allow message to take more width, considering padding */
+                right: 0; /* Reset right position for centering within wrapper */
             }
             .chatbot-pointer-message {
                 font-size: 0.85em;
                 white-space: normal; /* Allow text to wrap on small screens */
-                margin-bottom: 5px; /* Adjust space after message now that ::after is gone */
                 text-align: center;
                 max-width: 250px; /* Limit message width */
-            }
-            /* Adjust image arrow position for mobile */
-            .chatbot-pointer-arrow {
-                bottom: -20px; /* Adjust for mobile to point correctly */
-                right: 0px; /* Adjust for mobile to align correctly */
-                width: 50px; /* Smaller on mobile */
-                height: 50px; /* Smaller on mobile */
+                width: fit-content; /* Adjust width to content */
+                margin-left: auto; /* Center the message if wrapper is wider */
+                margin-right: auto;
             }
             .chatbot-pointer-arrow img {
-                transform: rotate(45deg); /* Keep diagonal for the mobile view */
+                width: 55px; /* Smaller on mobile */
+                height: auto;
+                transform: rotate(60deg) translateX(0px); /* Adjust rotation and translation for mobile */
                 transform-origin: bottom right;
+                margin-top: -25px; /* Adjust overlap for mobile */
+                margin-right: -15px; /* Adjust right pull for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chatbot-pointer-arrow img {
+                width: 45px; /* Even smaller on very small mobile */
+                margin-top: -20px;
+                margin-right: -10px;
             }
         }
     </style>
@@ -546,14 +538,27 @@
         </div>
     </div>
 
-    <div id="chatbotPointer" class="chatbot-pointer-container">
-        <div class="chatbot-pointer-message">
-            Click here to chat to our advanced conversational AI!
+    <div class="chatbot-widget-and-pointer-wrapper">
+        <div id="chatbotPointer" class="chatbot-pointer-container">
+            <div class="chatbot-pointer-message">
+                Click here to chat to our advanced conversational AI!
+            </div>
+            <div class="chatbot-pointer-arrow">
+                <img src="arrow.png" alt="Chatbot Pointer Arrow">
+            </div>
         </div>
-        <div class="chatbot-pointer-arrow">
-            <img src="arrow.png" alt="Chatbot Pointer Arrow">
-        </div>
+
+        <script>
+            window.__ow = window.__ow || {};
+            window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
+            window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
+            window.__ow.integration_name = "manual_settings";
+            window.__ow.product_name = "chatbot";     
+            ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+        </script>
+        <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
     </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -619,15 +624,5 @@
             }, 12000); // 5000ms (delay to show) + 7000ms (visible duration) = 12000ms total
         });
     </script>
-
-    <script>
-      window.__ow = window.__ow || {};
-      window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
-      window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
-      window.__ow.integration_name = "manual_settings";
-      window.__ow.product_name = "chatbot";    
-      ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
-    </script>
-    <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
 </body>
 </html>
