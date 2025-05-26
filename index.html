@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QoZap - Your Invoicing & Payment Solution (Under Development)</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      margin: 0;
-      background: #000;
-      color: white;
       font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      margin: 0;
       background-image: url('background.png');
       background-size: cover;
+      background-repeat: no-repeat;
       background-position: center top;
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-
     .chatbot-widget-and-pointer-wrapper {
       position: fixed;
       bottom: 85px;
@@ -31,7 +32,6 @@
       pointer-events: none;
       width: max-content;
     }
-
     .chatbot-pointer-container {
       display: flex;
       flex-direction: column;
@@ -42,13 +42,11 @@
       pointer-events: none;
       margin-bottom: 5px;
     }
-
     .chatbot-pointer-container.visible {
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
     }
-
     .chatbot-pointer-message {
       background-color: #2979ff;
       color: #fff;
@@ -61,14 +59,12 @@
       margin-bottom: -12px;
       z-index: 2;
     }
-
     .chatbot-pointer-arrow {
       position: relative;
       width: 40px;
       height: 40px;
       pointer-events: none;
     }
-
     .chatbot-pointer-arrow img {
       width: 100%;
       height: auto;
@@ -80,7 +76,6 @@
       right: 0;
       z-index: 1;
     }
-
     @media (max-width: 768px) {
       .chatbot-widget-and-pointer-wrapper {
         bottom: 85px;
@@ -114,9 +109,15 @@
         Click here to chat to our advanced conversational AI!
       </div>
       <div class="chatbot-pointer-arrow">
-        <img src="arrow.png" alt="Chatbot Pointer Arrow" />
+        <img src="arrow.png" alt="Chatbot Pointer Arrow">
       </div>
     </div>
+  </div>
+
+  <!-- Example main content -->
+  <div class="container">
+    <h1>Welcome to QoZap</h1>
+    <p>Your one-stop solution for smart invoicing and real-time payments.</p>
   </div>
 
   <script>
@@ -124,53 +125,41 @@
       const chatbotPointer = document.getElementById('chatbotPointer');
       setTimeout(() => {
         chatbotPointer.classList.add('visible');
-      }, 4000);
+      }, 5000);
       setTimeout(() => {
         chatbotPointer.classList.remove('visible');
-      }, 11000);
+      }, 12000);
     });
   </script>
 
-  <!-- Chatbot Embed (Your own script) -->
+  <!-- Chatbot Widget Embed -->
   <script>
     window.__ow = window.__ow || {};
     window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
     window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
     window.__ow.integration_name = "manual_settings";
     window.__ow.product_name = "chatbot";
-    (function (n, t, c) {
+    (function(n, t, c) {
       function i(n) {
-        return e._h ? e._h.apply(null, n) : e._q.push(n);
+        return e._h ? e._h.apply(null, n) : e._q.push(n)
       }
       var e = {
-        _q: [],
-        _h: null,
-        _v: "2.0",
-        on: function () {
-          i(["on", c.call(arguments)]);
-        },
-        once: function () {
-          i(["once", c.call(arguments)]);
-        },
-        off: function () {
-          i(["off", c.call(arguments)]);
-        },
-        get: function () {
-          if (!e._h) throw new Error("[OpenWidget] You can't use getters before load.");
-          return i(["get", c.call(arguments)]);
-        },
-        call: function () {
-          i(["call", c.call(arguments)]);
-        },
-        init: function () {
+        _q: [], _h: null, _v: "2.0",
+        on: function() { i(["on", c.call(arguments)]) },
+        once: function() { i(["once", c.call(arguments)]) },
+        off: function() { i(["off", c.call(arguments)]) },
+        get: function() { if (!e._h) throw new Error("[OpenWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) },
+        call: function() { i(["call", c.call(arguments)]) },
+        init: function() {
           var n = t.createElement("script");
           n.async = !0;
           n.type = "text/javascript";
           n.src = "https://cdn.openwidget.com/openwidget.js";
           t.head.appendChild(n);
-        },
+        }
       };
-      !n.__ow.asyncInit && e.init(), (n.OpenWidget = n.OpenWidget || e);
+      !n.__ow.asyncInit && e.init();
+      n.OpenWidget = n.OpenWidget || e;
     })(window, document, [].slice);
   </script>
 </body>
