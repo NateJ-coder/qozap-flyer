@@ -38,12 +38,12 @@
             gap: 15px; /* Space between buttons */
             padding-left: 20px;
             padding-right: 20px;
-            transition: top 0.3s ease; /* Smooth transition for disappearing effect */
+            transition: top 0.3s ease-out; /* Smooth transition for disappearing effect */
         }
 
-        /* NEW: Class to hide the navbar */
+        /* Class to hide the navbar */
         .navbar.hidden {
-            top: -60px; /* Hide the navbar above the viewport */
+            top: -70px; /* Adjust based on navbar height, typically more than 60px to fully hide */
         }
 
         .navbar-button {
@@ -131,7 +131,7 @@
         }
 
         .nav-card .icon {
-            font-size: 1.5em; /* Further reduced icon size */
+            font-size: 1.3em; /* Further reduced icon size from 1.5em */
             color: #64b5f6;
             margin-bottom: 10px;
             display: block;
@@ -197,7 +197,7 @@
             margin-bottom: 8px;
         }
         #features h3 {
-            text-align: left; /* Changed to left for consistency */
+            text-align: left; /* Keeping h3 in features centered if desired */
             margin-bottom: 15px;
         }
         #features ul {
@@ -378,6 +378,9 @@
                 padding: 10px 10px;
                 gap: 10px;
             }
+            .navbar.hidden {
+                top: -100px; /* Hide the navbar above the viewport for small screens */
+            }
             .navbar-button {
                 padding: 6px 10px;
                 font-size: 0.85em;
@@ -415,4 +418,305 @@
             }
             h2 {
                 font-size: 1.6em;
-                margin
+                margin-bottom: 15px;
+            }
+            h3 {
+                font-size: 1.2em;
+                margin-bottom: 8px;
+            }
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#overview" class="navbar-button"><i class="fas fa-info-circle icon"></i> Overview</a>
+        <a href="#features" class="navbar-button"><i class="fas fa-cogs icon"></i> Features</a>
+        <a href="#community" class="navbar-button"><i class="fas fa-users icon"></i> Community</a>
+        <a href="#booking" class="navbar-button"><i class="fas fa-calendar-alt icon"></i> Booking</a>
+        <a href="#pricing" class="navbar-button"><i class="fas fa-money-bill-wave icon"></i> Pricing</a>
+        <a href="#newsletter" class="navbar-button"><i class="fas fa-newspaper icon"></i> Insights</a>
+        <a href="#faq" class="navbar-button"><i class="fas fa-question-circle icon"></i> FAQ</a>
+        <a href="#contact" class="navbar-button"><i class="fas fa-envelope icon"></i> Contact Us</a>
+        <a href="#why-the-survey" class="navbar-button"><i class="fas fa-poll icon"></i> Survey</a>
+    </div>
+
+    <div class="container">
+        <div class="logo-header">
+            <h1>Welcome To the Future of Service Management:</h1>
+            <img src="logo.png" alt="QoZap Logo">
+            <p>Your Premier Invoicing & Service Management App</p>
+        </div>
+
+        <div class="navigation-hub reveal-on-scroll">
+            <a href="#overview" class="nav-card">
+                <span class="icon"><i class="fas fa-info-circle"></i></span> <h3>Overview</h3>
+                <p>QoZap's mission to revolutionize your service business.</p>
+            </a>
+            <a href="#features" class="nav-card">
+                <span class="icon"><i class="fas fa-cogs"></i></span> <h3>Core Features</h3>
+                <p>Essential tools for invoicing & payments.</p>
+            </a>
+            <a href="#community" class="nav-card">
+                <span class="icon"><i class="fas fa-users"></i></span> <h3>Community Hub</h3>
+                <p>Connect, collaborate, and grow with professionals.</p>
+            </a>
+            <a href="#booking" class="nav-card">
+                <span class="icon"><i class="fas fa-calendar-alt"></i></span> <h3>Client Booking</h3>
+                <p>Effortlessly manage appointments & attract clients.</p>
+            </a>
+            <a href="#pricing" class="nav-card">
+                <span class="icon"><i class="fas fa-money-bill-wave"></i></span> <h3>Smart Pricing</h3>
+                <p>Accurate product pricing with real-time updates.</p>
+            </a>
+            <a href="#newsletter" class="nav-card">
+                <span class="icon"><i class="fas fa-newspaper"></i></span> <h3>Industry Insights</h3>
+                <p>Stay ahead with exclusive deals & expert knowledge.</p>
+            </a>
+            <a href="#why-the-survey" class="nav-card">
+                <span class="icon"><i class="fas fa-poll"></i></span> <h3>Your Feedback</h3>
+                <p>Help us tailor QoZap to your exact needs.</p>
+            </a>
+            <a href="#faq" class="nav-card">
+                <span class="icon"><i class="fas fa-question-circle"></i></span> <h3>FAQ</h3>
+                <p>Find answers to common questions about QoZap.</p>
+            </a>
+            <a href="#contact" class="nav-card">
+                <span class="icon"><i class="fas fa-envelope"></i></span> <h3>Contact Us</h3>
+                <p>Get in touch with the QoZap team.</p>
+            </a>
+        </div>
+
+        <section id="overview" class="reveal-on-scroll">
+            <h2>Overview: Transforming Service Delivery</h2>
+            <div class="info-block">
+                <h3>What is QoZap?</h3>
+                <p>QoZap is your comprehensive **mobile-first solution** designed to streamline your on-the-go service business. We aim to eliminate daily pain points like managing invoices, securing payments, and fostering client relationships, providing an intuitive, efficient, and interconnected platform for your growth.</p>
+            </div>
+            <div class="info-block">
+                <h3>Our Principles</h3>
+                <ul>
+                    <li><strong>Simplicity by Design;</strong> Easy-to-use for everyone, regardless of tech savviness.</li>
+                    <li><strong>Unmatched Efficiency;</strong> Generate quotes & invoices swiftly; accelerate payment collection with integrated solutions (e.g., QR codes).</li>
+                    <li><strong>Mobile-First Advantage;</strong> Fully functional and seamless experience on your smartphone/tablet.</li>
+                    <li><strong>Community & Collaboration;</strong> Foster a vibrant network for knowledge sharing and mutual support.</li>
+                </ul>
+            </div>
+            <div class="info-block">
+                <h3>Who is QoZap For?</h3>
+                <p>Designed for diverse **mobile service professionals** who serve clients on-site. This includes:</p>
+                <ul>
+                    <li><strong>Home Service Heroes;</strong> Plumbers, electricians, cleaners, handymen.</li>
+                    <li><strong>Mobile Beauty & Wellness;</strong> Hairdressers, massage therapists, personal trainers.</li>
+                    <li><strong>Knowledge Sharers;</strong> Private tutors, music instructors.</li>
+                    <li><strong>Dedicated Pet Caregivers;</strong> Mobile groomers, dog walkers.</li>
+                    <li><strong>And many more!</strong> If you provide services on the go, QoZap is for you.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="reveal-on-scroll">
+            <h2>QoZap's Core Features: Streamline Your Service Business (Under Development)</h2>
+            <ul>
+                <li>**Effortless Quote Generation;** Create & share professional quotes instantly via WhatsApp, email, or in person.</li>
+                <li>**Seamless On-Site Invoice Preparation;** Easily tally expenses and generate final invoices with a tap after service.</li>
+                <li>**Automated Professional Invoices;** QoZap calculates total costs (combining expenses, labor, and service fees based on your onboarding setup) and produces a polished, comprehensive invoice, complete with all your professional details and the servicing employee's information.</li>
+                <li>**Flexible & Instant Payment Options with QR Code;** Present a dynamic QR code on your phone for immediate client scanning and payment. Alternatively, securely share the invoice via email, WhatsApp, or other platforms for remote payment.</li>
+                <li>**Secure Client-Side Payment Gateway;** Your clients will experience a frictionless payment process with a "Pay Now" button, redirecting them to a secure gateway where they can choose their preferred method: PayPal, other trusted EFT gateways, card payment, or direct EFT to your pre-configured bank details.</li>
+                <li>**Automated Payment Reminders;** Reduce outstanding debts and improve cash flow with intelligent, automated payment reminders sent to clients with pending invoices, directly via email, WhatsApp, or within the app.</li>
+                <li>**Real-Time Payment Tracking & Instant Notifications;** Receive immediate notifications the moment a client payment is processed. QoZap automatically logs all payments, giving you an always-updated overview of outstanding invoices and a complete payment history for easy reconciliation.</li>
+                <li>**(Future Development) Enhanced Repeat Service Functionality;** For returning clients, QoZap will securely store past service history. Upon payment for new services, client payment details can be saved (with their consent) to ensure even smoother and faster future transactions, building lasting relationships.</li>
+            </ul>
+        </section>
+
+        <section id="community" class="reveal-on-scroll">
+            <h2>The QoZap Community Hub: Grow Your Network, Grow Your Business!</h2>
+            <div class="info-block">
+                <h3>Dynamic Service Catalogs & Showcase</h3>
+                <p>Publish updated catalogs within the QoZap community to keep your services visible and discoverable by other providers and future clients.</p>
+            </div>
+            <div class="info-block">
+                <h3>Vibrant Discussion Forums & Collaborative Support</h3>
+                <p>Engage in industry discussions, share best practices, and get advice from fellow service providers in our supportive forum.</p>
+            </div>
+            <div class="info-block">
+                <h3>Client SOS Network: Never Miss a Job</h3>
+                <p>If you can't take a job, use "Client SOS" to find other service providers in the area to step in, ensuring client satisfaction and new opportunities for the network.</p>
+            </div>
+        </section>
+
+        <section id="booking" class="reveal-on-scroll">
+            <h2>Effortless Client Bookings & Reputation Building</h2>
+            <div class="info-block">
+                <h3>Streamlined Client Discovery & Direct Booking</h3>
+                <p>Clients can easily find and book your services directly through the app based on their location, simplifying scheduling for both parties.</p>
+            </div>
+            <div class="info-block">
+                <h3>Transparent Service Provider Ratings (Tar Count)</h3>
+                <p>Build trust with a transparent rating system. Clients rate their experience, and your "Tar Count" (out of 5 stars) helps prospective clients choose you.</p>
+            </div>
+        </section>
+
+        <section id="pricing" class="reveal-on-scroll">
+            <h2>Smart Pricing & Real-Time Product Management</h2>
+            <div class="info-block">
+                <h3>Automated Product Catalog Updates</h3>
+                <p>Our intelligent web crawlers continuously update product pricing from your frequented stores (e.g., Buco, Midas), eliminating manual checks.</p>
+            </div>
+            <div class="info-block">
+                <h3>Precise On-Site Pricing with Custom Markups</h3>
+                <p>Instantly find up-to-date product prices in the app and apply your pre-set markup (e.g., 2.5%) for accurate client charges and optimal profitability.</p>
+            </div>
+        </section>
+
+        <section id="newsletter" class="reveal-on-scroll">
+            <h2>Exclusive Industry Insights & Supplier Offers</h2>
+            <div class="info-block">
+                <h3>Personalized Service Provider Newsletter</h3>
+                <p>Receive tailored news, trends, and tips relevant to your field, helping you hone skills and expand knowledge.</p>
+            </div>
+            <div class="info-block">
+                <h3>Access to Cheaper, Higher-Quality Product Offers</h3>
+                <p>Get exclusive discounts and offers on materials from partner suppliers (Buco, Midas, etc.) to optimize costs and enhance client value.</p>
+            </div>
+        </section>
+
+        <section id="why-the-survey" class="cta-section reveal-on-scroll">
+            <h2>Your Voice Shapes QoZap - Share Your Insights Today!</h2>
+            <p>Your expertise is crucial as QoZap develops. Help us build an app that truly meets your unique needs. Take our survey to directly influence features and functionalities. Your feedback on usability, desired tools, and challenges is invaluable!</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take Our Survey!</a>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item reveal-on-scroll">
+                <h3>Who is QoZap designed for?</h3>
+                <p>QoZap is for a wide range of on-location service professionals, including home maintenance, cleaning, mobile beauty/wellness, tutors, pet care, handymen, and many skilled trades.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>Will there be a cost to use QoZap?</h3>
+                <p>We are evaluating pricing models to offer exceptional value without significant financial burden. More details on pricing will be shared closer to launch.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>How will the QR code payment system work?</h3>
+                <p>Clients will scan a QR code displayed on your phone, redirecting them to a secure online payment page to complete the transaction via their preferred method.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>What happens after a client makes a payment?</h3>
+                <p>You'll receive an immediate in-app notification upon successful payment, and the corresponding invoice will automatically update.</p>
+            </div>
+            <div class="faq-item reveal-on-scroll">
+                <h3>Will QoZap be accessible on different devices?</h3>
+                <p>Our focus is on a robust mobile experience. We are exploring web access for certain functionalities in the future for greater flexibility.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section reveal-on-scroll">
+            <h2>Get in Touch with the QoZap Team</h2>
+            <p>Questions, suggestions, or curious about QoZap? We'd love to hear from you!</p>
+            <p>Phone: <a href="tel:0606507692">060 650 7692</a></p>
+            <p>Email: <a href="mailto:qozappinfo@gmail.com">qozappinfo@gmail.com</a></p>
+            <hr style="border-color: rgba(255, 255, 255, 0.1); margin: 30px auto; width: 80%;">
+            <h2>Stay Updated on QoZap's Progress!</h2>
+            <p>Be the first to receive news about QoZap's development, features, and official launch. Subscribe now!</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj_4Q1Ulg_HqK580sEB16H8x90JxZbtR_gYWyaSZ8ug0p5lg/viewform?usp=header" class="cta-button" style="color: white;">Subscribe for Updates</a>
+        </section>
+
+        <div class="disclaimer reveal-on-scroll">
+            <p>Please remember: QoZap is currently under active development. Features described may be subject to modifications or additions.</p>
+        </div>
+    </div>
+
+    <div id="surveyModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h2>We Value Your Expertise!</h2>
+            <p>Help us build QoZap into the perfect tool for service providers. Take a moment to share your valuable insights through our brief survey!</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take the Survey Now!</a>
+        </div>
+    </div>
+
+    <div class="chatbot-widget-and-pointer-wrapper">
+        <script>
+            window.__ow = window.__ow || {};
+            window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
+            window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
+            window.__ow.integration_name = "manual_settings";
+            window.__ow.product_name = "chatbot";
+            ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+        </script>
+        <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Pop-up Modal Logic ---
+            const surveyModal = document.getElementById('surveyModal');
+            const closeButton = document.querySelector('.modal-close-button');
+            const ctaButtonInModal = surveyModal.querySelector('.cta-button');
+
+            const showModal = () => {
+                surveyModal.classList.add('active');
+            };
+
+            const hideModal = () => {
+                surveyModal.classList.remove('active');
+            };
+
+            // This line controls when the modal appears (3000ms = 3 seconds)
+            setTimeout(showModal, 3000);
+
+            closeButton.addEventListener('click', hideModal);
+            surveyModal.addEventListener('click', (event) => {
+                if (event.target === surveyModal) {
+                    hideModal();
+                }
+            });
+            ctaButtonInModal.addEventListener('click', hideModal);
+
+
+            // --- Scroll-Reveal Logic ---
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // --- Navbar Disappearing on Scroll Logic ---
+            const navbar = document.querySelector('.navbar');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY) {
+                    // Scrolling down
+                    navbar.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    navbar.classList.remove('hidden');
+                }
+                lastScrollY = window.scrollY;
+            });
+        });
+    </script>
+</body>
+</html>
