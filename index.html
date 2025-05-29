@@ -1,227 +1,1264 @@
+QoZap full HTML:
+
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QoZap - Empowering Service Professionals Everywhere</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: url('background.png') no-repeat center top fixed;
-      background-size: cover;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .container {
-      max-width: 960px;
-      margin: 60px auto;
-      padding: 0 30px;
-      animation: fadeIn 1.5s forwards;
-    }
-    .logo-header {
-      text-align: center;
-      padding-bottom: 40px;
-    }
-    .logo-header h1 { color: #fff; }
-    .logo-header img {
-      max-width: 240px;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-    .logo-header img:hover { transform: scale(1.05); }
-    .navigation-hub {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-      padding: 20px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 12px;
-    }
-    .nav-card {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      transition: 0.3s ease;
-    }
-    .nav-card:hover {
-      background: rgba(41, 121, 255, 0.7);
-      transform: translateY(-5px);
-    }
-    .nav-card .icon { font-size: 2em; margin-bottom: 10px; display: block; color: #64b5f6; }
-    .nav-card h3 { color: #bbdefb; margin: 10px 0; }
-    .nav-card p { font-size: 0.9em; color: #e0e0e0; }
-    section {
-      background: rgba(0,0,0,0.4);
-      padding: 30px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-    }
-    h2 { color: #64b5f6; margin-top: 0; }
-    h3 { color: #bbdefb; margin: 15px 0 10px; }
-    ul { padding-left: 20px; }
-    ul li { margin-bottom: 10px; }
-    .cta-button {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #2979ff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.1em;
-      margin-top: 15px;
-    }
-    .cta-button:hover { background-color: #0d47a1; transform: translateY(-3px); }
-    .faq-item {
-      background: rgba(0,0,0,0.3);
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 8px;
-    }
-    .faq-item h3 { margin-top: 0; color: #64b5f6; }
-    .contact-section {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.4);
-      border-radius: 8px;
-    }
-    .contact-section a { color: #2979ff; text-decoration: none; }
-    .contact-section a:hover { text-decoration: underline; }
-    .disclaimer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85em;
-      color: #9e9e9e;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s 0.3s, opacity 0.3s ease;
-    }
-    .modal-overlay.active {
-      visibility: visible;
-      opacity: 1;
-    }
-    .modal-content {
-      background: #1a237e;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 450px;
-      width: 90%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    .modal-close-button {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      font-size: 1.5em;
-      color: #bbdefb;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-    .modal-close-button:hover { color: #fff; }
-    .chatbot-widget-and-pointer-wrapper {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-    .reveal-on-scroll.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QoZap - Empowering Service Professionals Everywhere</title>
+
+<style>
+
+html {
+
+scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+
+}
+
+body {
+
+font-family: sans-serif;
+
+margin: 0;
+
+background-image: url('background.png');
+
+background-size: cover;
+
+background-repeat: no-repeat;
+
+background-position: center top;
+
+background-attachment: fixed;
+
+color: #fff;
+
+min-height: 100vh;
+
+display: flex;
+
+flex-direction: column;
+
+}
+
+.container {
+
+max-width: 960px;
+
+margin: 60px auto 20px auto;
+
+padding: 30px;
+
+background-color: rgba(0, 0, 0, 0);
+
+border-radius: 8px;
+
+opacity: 0;
+
+animation: fadeIn 1.5s forwards;
+
+padding-left: 50px;
+
+padding-right: 50px;
+
+}
+
+.logo-header {
+
+text-align: center;
+
+padding-bottom: 50px;
+
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.logo-header h1 {
+
+color: #fff;
+
+margin-bottom: 40px;
+
+}
+
+.logo-header img {
+
+max-width: 280px;
+
+height: auto;
+
+margin-bottom: 25px;
+
+transition: transform 0.3s ease;
+
+}
+
+.logo-header img:hover {
+
+transform: scale(1.05);
+
+}
+
+
+
+.navigation-hub {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+gap: 20px;
+
+padding: 40px 20px;
+
+margin-bottom: 30px;
+
+background-color: rgba(0, 0, 0, 0.5);
+
+border-radius: 12px;
+
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+text-align: center;
+
+border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+
+
+.nav-card {
+
+background-color: rgba(0, 0, 0, 0.6);
+
+padding: 20px;
+
+border-radius: 10px;
+
+text-decoration: none;
+
+color: #fff;
+
+transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+border: 1px solid rgba(255, 255, 255, 0.05);
+
+}
+
+
+
+.nav-card:hover {
+
+background-color: rgba(41, 121, 255, 0.7);
+
+transform: translateY(-5px);
+
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+.nav-card .icon {
+
+font-size: 2.5em;
+
+color: #64b5f6;
+
+margin-bottom: 10px;
+
+display: block;
+
+}
+
+
+
+.nav-card .icon-img {
+
+max-width: 50px;
+
+height: auto;
+
+margin-bottom: 10px;
+
+}
+
+
+
+.nav-card h3 {
+
+font-size: 1.3em;
+
+margin-top: 0;
+
+margin-bottom: 8px;
+
+color: #bbdefb;
+
+}
+
+
+
+.nav-card p {
+
+font-size: 0.9em;
+
+line-height: 1.4;
+
+color: #e0e0e0;
+
+}
+
+
+
+section {
+
+padding: 30px 20px;
+
+margin-bottom: 30px;
+
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+background-color: rgba(0, 0, 0, 0.4);
+
+border-radius: 8px;
+
+}
+
+section:last-child {
+
+border-bottom: none;
+
+}
+
+h2 {
+
+color: #64b5f6;
+
+margin-top: 0;
+
+margin-bottom: 20px;
+
+}
+
+/* Adjusted alignment for specific H2s */
+
+#overview h2, #community h2, #booking h2, #pricing h2, #newsletter h2, #faq h2, #contact h2, #why-the-survey h2 {
+
+text-align: left; /* All H2s, including survey, now left-aligned */
+
+}
+
+#features h2 {
+
+text-align: right; /* Keeping Features H2 aligned right */
+
+}
+
+
+
+h3 {
+
+color: #bbdefb;
+
+margin-top: 15px;
+
+margin-bottom: 10px;
+
+}
+
+.info-block {
+
+background-color: rgba(0, 0, 0, 0.3);
+
+padding: 15px;
+
+border-radius: 8px;
+
+margin-bottom: 15px;
+
+}
+
+.info-block h3 {
+
+margin-top: 0;
+
+}
+
+.info-block ul li {
+
+margin-bottom: 8px;
+
+}
+
+#features h3 {
+
+text-align: center; /* Keeping h3 in features centered if desired */
+
+margin-bottom: 15px;
+
+}
+
+#features ul {
+
+list-style-type: disc;
+
+padding-left: 30px;
+
+}
+
+#features ul li {
+
+margin-bottom: 12px;
+
+}
+
+.cta-section {
+
+text-align: left; /* Aligned section text to left */
+
+padding: 40px 20px;
+
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+margin-bottom: 30px;
+
+background-color: rgba(0, 0, 0, 0.4);
+
+border-radius: 8px;
+
+}
+
+.cta-section p {
+
+text-align: left; /* Ensure paragraphs within CTA are left-aligned */
+
+}
+
+.cta-button {
+
+display: inline-block;
+
+padding: 12px 25px;
+
+background-color: #2979ff;
+
+color: #fff;
+
+text-decoration: none;
+
+border-radius: 8px;
+
+font-size: 1.1em;
+
+margin-top: 15px;
+
+transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.cta-button:hover {
+
+background-color: #0d47a1;
+
+transform: translateY(-3px);
+
+}
+
+.faq-item {
+
+margin-bottom: 15px;
+
+padding: 15px;
+
+background-color: rgba(0, 0, 0, 0.3);
+
+border-radius: 8px;
+
+}
+
+.faq-item h3 {
+
+margin-top: 0;
+
+color: #64b5f6;
+
+}
+
+.contact-section {
+
+text-align: center;
+
+padding: 30px 20px;
+
+background-color: rgba(0, 0, 0, 0.4);
+
+border-radius: 8px;
+
+}
+
+.contact-section p {
+
+font-size: 1em;
+
+margin-bottom: 8px;
+
+}
+
+.contact-section a {
+
+color: #2979ff;
+
+text-decoration: none;
+
+}
+
+.contact-section a:hover {
+
+text-decoration: underline;
+
+}
+
+.disclaimer {
+
+text-align: center;
+
+padding: 20px;
+
+font-size: 0.85em;
+
+color: #9e9e9e;
+
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+margin-top: 30px;
+
+}
+
+
+
+/* --- Pop-up Modal CSS --- */
+
+.modal-overlay {
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background-color: rgba(0, 0, 0, 0.7);
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+z-index: 1000;
+
+visibility: hidden;
+
+opacity: 0;
+
+transition: visibility 0s 0.3s, opacity 0.3s ease;
+
+}
+
+
+
+.modal-overlay.active {
+
+visibility: visible;
+
+opacity: 1;
+
+transition: visibility 0s, opacity 0.3s ease;
+
+}
+
+
+
+.modal-content {
+
+background-color: #1a237e;
+
+padding: 25px;
+
+border-radius: 10px;
+
+text-align: center;
+
+width: 90%;
+
+max-width: 450px;
+
+position: relative;
+
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+transform: translateY(-20px);
+
+transition: transform 0.3s ease;
+
+}
+
+
+
+.modal-overlay.active .modal-content {
+
+transform: translateY(0);
+
+}
+
+
+
+.modal-content h2 {
+
+color: #64b5f6;
+
+margin-bottom: 12px;
+
+text-align: center;
+
+font-size: 1.6em;
+
+}
+
+
+
+.modal-content p {
+
+color: #bbdefb;
+
+font-size: 1em;
+
+margin-bottom: 20px;
+
+}
+
+
+
+.modal-close-button {
+
+position: absolute;
+
+top: 8px;
+
+right: 12px;
+
+font-size: 1.5em;
+
+color: #bbdefb;
+
+cursor: pointer;
+
+background: none;
+
+border: none;
+
+padding: 0;
+
+line-height: 1;
+
+transition: color 0.2s ease;
+
+}
+
+.modal-close-button:hover {
+
+color: #fff;
+
+}
+
+
+
+/* --- General Animations (for container) --- */
+
+@keyframes fadeIn {
+
+from { opacity: 0; }
+
+to { opacity: 1; }
+
+}
+
+
+
+/* --- Scroll-Reveal Animations --- */
+
+.reveal-on-scroll {
+
+opacity: 0;
+
+transform: translateY(30px);
+
+transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+will-change: opacity, transform;
+
+}
+
+
+
+.reveal-on-scroll.is-visible {
+
+opacity: 1;
+
+transform: translateY(0);
+
+}
+
+
+
+/* NEW: Wrapper for the chatbot widget */
+
+.chatbot-widget-and-pointer-wrapper {
+
+position: fixed;
+
+bottom: 20px;
+
+right: 20px;
+
+z-index: 9999;
+
+}
+
+
+
+/* Media Query for smaller screens (mobile adjustments) */
+
+@media (max-width: 768px) {
+
+.chatbot-widget-and-pointer-wrapper {
+
+bottom: 15px;
+
+right: 15px;
+
+}
+
+.navigation-hub {
+
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+gap: 15px;
+
+padding: 30px 15px;
+
+}
+
+.nav-card {
+
+padding: 15px;
+
+}
+
+.nav-card h3 {
+
+font-size: 1.1em;
+
+margin-bottom: 5px;
+
+}
+
+.nav-card p {
+
+font-size: 0.85em;
+
+}
+
+.logo-header h1 {
+
+font-size: 1.8em;
+
+margin-bottom: 20px;
+
+}
+
+.logo-header img {
+
+max-width: 200px;
+
+margin-bottom: 15px;
+
+}
+
+h2 {
+
+font-size: 1.6em;
+
+margin-bottom: 15px;
+
+}
+
+h3 {
+
+font-size: 1.2em;
+
+margin-bottom: 8px;
+
+}
+
+.cta-button {
+
+font-size: 1em;
+
+padding: 10px 20px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="container">
-    <div class="logo-header">
-      <h1>Welcome to QoZap</h1>
-      <img src="logo.png" alt="QoZap Logo">
-      <p>Your mobile-first invoicing & service management tool.</p>
-    </div>
 
-    <div class="navigation-hub reveal-on-scroll">
-      <a href="#overview" class="nav-card"><span class="icon">ℹ️</span><h3>Overview</h3><p>Learn what QoZap is all about.</p></a>
-      <a href="#features" class="nav-card"><span class="icon">⚙️</span><h3>Features</h3><p>Powerful tools for growing your business.</p></a>
-      <a href="#community" class="nav-card"><span class="icon">🤝</span><h3>Community</h3><p>Connect and collaborate with pros.</p></a>
-      <a href="#pricing" class="nav-card"><span class="icon">💰</span><h3>Pricing</h3><p>Smart materials and service pricing.</p></a>
-      <a href="#contact" class="nav-card"><span class="icon">📞</span><h3>Contact</h3><p>Reach out or sign up for updates.</p></a>
-    </div>
+<div class="container">
 
-    <!-- Sections will follow the same structure as your original with cleaned-up formatting -->
-    <!-- Add overview, features, community, pricing, contact, FAQ, newsletter, modal, chatbot, and script just like the original -->
-  </div>
+<div class="logo-header">
 
-  <div id="surveyModal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close-button">&times;</button>
-      <h2>We Value Your Expertise!</h2>
-      <p>Help shape QoZap by sharing your insights. Take our quick survey.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take the Survey</a>
-    </div>
-  </div>
+<h1>Welcome To the Future of Service Management:</h1>
 
-  <div class="chatbot-widget-and-pointer-wrapper">
-    <script>
-      window.__ow = window.__ow || {};
-      window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
-      window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
-      window.__ow.integration_name = "manual_settings";
-      window.__ow.product_name = "chatbot";
-      (function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
-      var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0;n.type="text/javascript";n.src="https://cdn.openwidget.com/openwidget.js";t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice));
-    </script>
-  </div>
+<img src="logo.png" alt="QoZap Logo">
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('surveyModal');
-      const closeButton = document.querySelector('.modal-close-button');
-      setTimeout(() => modal.classList.add('active'), 3000);
-      closeButton.addEventListener('click', () => modal.classList.remove('active'));
-      modal.addEventListener('click', e => {
-        if (e.target === modal) modal.classList.remove('active');
-      });
+<p>Your Premier Invoicing & Service Management App</p>
 
-      const revealElements = document.querySelectorAll('.reveal-on-scroll');
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      revealElements.forEach(el => observer.observe(el));
-    });
-  </script>
+</div>
+
+
+
+<div class="navigation-hub reveal-on-scroll">
+
+<a href="#overview" class="nav-card">
+
+<span class="icon">[i]</span> <h3>Overview</h3>
+
+<p>Discover QoZap's mission to revolutionize your service business.</p>
+
+</a>
+
+<a href="#features" class="nav-card">
+
+<span class="icon">[⭐]</span> <h3>Core Features</h3>
+
+<p>Explore essential tools for invoicing & payments.</p>
+
+</a>
+
+<a href="#community" class="nav-card">
+
+<span class="icon">[🤝]</span> <h3>Community Hub</h3>
+
+<p>Connect, collaborate, and grow with fellow professionals.</p>
+
+</a>
+
+<a href="#booking" class="nav-card">
+
+<span class="icon">[📅]</span> <h3>Client Booking</h3>
+
+<p>Effortlessly manage appointments and attract new clients.</p>
+
+</a>
+
+<a href="#pricing" class="nav-card">
+
+<span class="icon">[💰]</span> <h3>Smart Pricing</h3>
+
+<p>Accurate product pricing with real-time updates.</p>
+
+</a>
+
+<a href="#newsletter" class="nav-card">
+
+<span class="icon">[📰]</span> <h3>Industry Insights</h3>
+
+<p>Stay ahead with exclusive deals and expert knowledge.</p>
+
+</a>
+
+<a href="#why-the-survey" class="nav-card">
+
+<span class="icon">[📝]</span> <h3>Your Feedback</h3>
+
+<p>Help us tailor QoZap to your exact needs.</p>
+
+</a>
+
+<a href="#faq" class="nav-card">
+
+<span class="icon">[❓]</span> <h3>FAQ</h3>
+
+<p>Find answers to common questions about QoZap.</p>
+
+</a>
+
+<a href="#contact" class="nav-card">
+
+<span class="icon">[📞]</span> <h3>Contact Us</h3>
+
+<p>Get in touch with the QoZap team.</p>
+
+</a>
+
+</div>
+
+
+
+<section id="overview" class="reveal-on-scroll">
+
+<h2>Overview: Transforming Service Delivery</h2>
+
+<div class="info-block">
+
+<h3>What is QoZap?</h3>
+
+<p>QoZap is being developed as your comprehensive mobile-first solution, meticulously crafted to streamline every aspect of your on-the-go service business. We deeply understand the daily challenges service providers face – from managing invoices and securing prompt payments to fostering client relationships. Our vision for QoZap is to eliminate these pain points, providing you with an intuitive, efficient, and interconnected platform designed to empower your growth and simplify your workflow.</p>
+
+</div>
+
+<div class="info-block">
+
+<h3>Our Foundational Principles</h3>
+
+<ul>
+
+<li><strong>Simplicity by Design:</strong> We're committed to an intuitive, clutter-free user experience, ensuring that digital invoicing and comprehensive business management are accessible and straightforward for everyone, regardless of tech savviness.</li>
+
+<li><strong>Unmatched Efficiency:</strong> QoZap is engineered for speed, enabling you to generate quotes and invoices swiftly. Our planned integrated payment solutions, including QR codes, are designed to significantly accelerate your payment collection process.</li>
+
+<li><strong>Mobile-First Advantage:</strong> Built from the ground up for your smartphone and tablet, QoZap promises a fully functional and seamless experience at your fingertips, empowering you to manage your business effectively from any service location.</li>
+
+<li><strong>Community & Collaboration:</strong> We believe in the strength of a connected network. QoZap is fostering a vibrant community where service providers can share knowledge, support each other, and grow together.</li>
+
+</ul>
+
+</div>
+
+<div class="info-block">
+
+<h3>Your Business, Our Focus: Target Audience</h3>
+
+<p>QoZap is specifically designed to empower a diverse and dedicated community of mobile service professionals. If your work involves serving clients at their homes or various on-site locations, QoZap is being built for you:</p>
+
+<ul>
+
+<li><strong>Home Service Heroes:</strong> Plumbers, electricians, cleaning services, maintenance crews, and general handymen.</li>
+
+<li><strong>Mobile Beauty & Wellness:</strong> Hairdressers, nail technicians, massage therapists, and personal trainers.</li>
+
+<li><strong>Knowledge & Skills Sharers:</strong> Private tutors, music instructors, and specialized coaches.</li>
+
+<li><strong>Dedicated Pet Caregivers:</strong> Mobile pet groomers, dog walkers, and animal sitters.</li>
+
+<li><strong>And many more!</strong> If you provide services on the go, QoZap is your future business partner.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<section id="features" class="reveal-on-scroll">
+
+<h2>QoZap's Core Features: Streamline Your Service Business (Under Development)</h2>
+
+<ul>
+
+<li><strong>Effortless Quote Generation & Sharing:</strong> Create professional, detailed quotes on the spot and share them instantly with clients via WhatsApp, email, or in person, securing agreements faster.</li>
+
+<li><strong>Seamless On-Site Invoice Preparation:</strong> Upon service completion, effortlessly tally expenses (e.g., materials purchased), input employee details, and generate a final invoice with a simple tap.</li>
+
+<li><strong>Automated Professional Invoice Generation:</strong> QoZap intelligently calculates total costs (combining expenses, labor, and service fees based on your onboarding setup) and produces a polished, comprehensive invoice, complete with all your professional details and the servicing employee's information.</li>
+
+<li><strong>Flexible & Instant Payment Options with QR Code:</strong> Present a dynamic QR code on your phone for immediate client scanning and payment. Alternatively, securely share the invoice via email, WhatsApp, or other platforms for remote payment.</li>
+
+<li><strong>Secure Client-Side Payment Gateway:</strong> Your clients will experience a frictionless payment process with a "Pay Now" button, redirecting them to a secure gateway where they can choose their preferred method: PayPal, other trusted EFT gateways, card payment, or direct EFT to your pre-configured bank details.</li>
+
+<li><strong>Automated Payment Reminders:</strong> Reduce outstanding debts and improve cash flow with intelligent, automated payment reminders sent to clients with pending invoices, directly via email, WhatsApp, or within the app.</li>
+
+<li><strong>Real-Time Payment Tracking & Instant Notifications:</strong> Receive immediate notifications the moment a client payment is processed. QoZap automatically logs all payments, giving you an always-updated overview of outstanding invoices and a complete payment history for easy reconciliation.</li>
+
+<li><strong>(Future Development) Enhanced Repeat Service Functionality:</strong> For returning clients, QoZap will securely store past service history. Upon payment for new services, client payment details can be saved (with their consent) to ensure even smoother and faster future transactions, building lasting relationships.</li>
+
+</ul>
+
+</section>
+
+
+
+<section id="community" class="reveal-on-scroll">
+
+<h2>The QoZap Community Hub: Grow Your Network, Grow Your Business!</h2>
+
+<div class="info-block">
+
+<h3>Dynamic Service Catalogs & Showcase</h3>
+
+<p>Keep your services fresh and visible! Publish updated catalogs of your offerings directly within the QoZap community. This provides a dynamic platform for other service providers and potentially even clients (in future phases) to discover your expertise and specializations.</p>
+
+</div>
+
+<div class="info-block">
+
+<h3>Vibrant Discussion Forums & Collaborative Support</h3>
+
+<p>Engage in meaningful discussions on industry-specific topics, share best practices, and gain insights from seasoned professionals. Need a quick solution or advice? Our community forum is the perfect place to ask for assistance from fellow service providers, fostering a powerful network of mutual support.</p>
+
+</div>
+
+<div class="info-block">
+
+<h3>Client SOS Network: Never Miss a Job</h3>
+
+<p>Life happens, and sometimes you can't take on a client. With QoZap's unique "Client SOS" feature, you can quickly put out a call for assistance when you can't serve a client. Other service providers in the area can then step in, ensuring the client receives timely help and expanding opportunities for everyone in the QoZap network. It's a win-win for client satisfaction and community collaboration!</p>
+
+</div>
+
+</section>
+
+
+
+<section id="booking" class="reveal-on-scroll">
+
+<h2>Effortless Client Bookings & Reputation Building</h2>
+
+<div class="info-block">
+
+<h3>Streamlined Client Discovery & Direct Booking</h3>
+
+<p>QoZap will offer a dedicated, intuitive system where clients can easily search for and find service providers based on their location. Once they find you, they can directly book your services through the app, simplifying the entire scheduling process for both you and your clients.</p>
+
+</div>
+
+<div class="info-block">
+
+<h3>Transparent Service Provider Ratings (Tar Count)</h3>
+
+<p>Build your reputation and trust with a transparent rating system. After every completed service, clients will have the opportunity to rate their experience with you. Your aggregated "Tar Count" (out of 5 stars) will be prominently displayed to prospective clients, giving them confidence in choosing your services and helping you stand out.</p>
+
+</div>
+
+</section>
+
+
+
+<section id="pricing" class="reveal-on-scroll">
+
+<h2>Smart Pricing & Real-Time Product Management</h2>
+
+<div class="info-block">
+
+<h3>Automated Product Catalog Updates via Web Crawlers</h3>
+
+<p>Gone are the days of manual price checks! Our intelligent backend web crawlers will continuously scan and update product catalogs from the stores you frequent for materials (e.g., Buco, Midas). This ensures that QoZap always has the most current pricing information for a vast array of products.</p>
+
+</div>
+
+<div class="info-block">
+
+<h3>Precise On-Site Pricing with Custom Markups</h3>
+
+<p>When you're at a client's location and need to charge for materials (like a new tap or PVC piping), simply search for the product within the QoZap app. You'll instantly see its exact, up-to-date price. The app will then automatically apply your pre-set markup (e.g., 2.5% or other stipulations from your onboarding) to accurately calculate the final charge, ensuring fair pricing and optimal profitability for you.</p>
+
+</div>
+
+</section>
+
+
+
+<section id="newsletter" class="reveal-on-scroll">
+
+<h2>Exclusive Industry Insights & Supplier Offers</h2>
+
+<div class="info-block">
+
+<h3>Personalized Service Provider Newsletter</h3>
+
+<p>Stay at the forefront of your industry! QoZap will deliver a tailored newsletter specifically designed for your field of expertise. This means you'll receive relevant news, emerging trends, and valuable tips directly to your inbox, helping you hone your skills and expand your knowledge.</p>
+
+</div>
+
+<div class="info-block">
+
+<h3>Access to Cheaper, Higher-Quality Product Offers</h3>
+
+<p>Through strategic partnerships with leading product providers (like Buco, Midas, and others), your personalized newsletter will feature exclusive offers and discounts on materials. This gives you direct access to cheaper, high-quality products, helping you optimize your costs and enhance the value you offer to your clients.</p>
+
+</div>
+
+</section>
+
+
+
+<section id="why-the-survey" class="cta-section reveal-on-scroll">
+
+<h2>Your Voice Shapes QoZap - Share Your Insights Today!</h2>
+
+<p>As QoZap continues its development journey, your expertise as service providers is absolutely crucial. Help us build an app that truly understands and meets your unique needs. Take a moment to complete our survey and directly influence the features and functionalities that will empower your business. Your feedback on usability, desired tools, and potential challenges is invaluable!</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take Our Survey!</a>
+
+</section>
+
+
+
+<section id="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item reveal-on-scroll">
+
+<h3>Who is QoZap designed for?</h3>
+
+<p>QoZap is being built for a wide range of on-location service professionals, including home maintenance, cleaning services, mobile beauty and wellness, tutors, pet care providers, handymen, and many other skilled trades and services.</p>
+
+</div>
+
+<div class="faq-item reveal-on-scroll">
+
+<h3>Will there be a cost to use QoZap?</h3>
+
+<p>We are currently evaluating different pricing models to ensure QoZap offers exceptional value to our service providers without imposing a significant financial burden. Our commitment is to provide a cost-effective solution, and we will share more details about pricing as we approach our launch.</p>
+
+</div>
+
+<div class="faq-item reveal-on-scroll">
+
+<h3>How will the QR code payment system work?</h3>
+
+<p>Once implemented, the QR code payment feature will allow your clients to simply scan a code displayed on your phone using their smartphone camera or a QR code reader app. This will redirect them to a secure online payment page where they can complete the transaction using their preferred method.</p>
+
+</div>
+
+<div class="faq-item reveal-on-scroll">
+
+<h3>What happens after a client makes a payment?</h3>
+
+<p>Upon successful payment by a client through the QR code or other integrated payment methods, you will receive an immediate notification within the QoZap app. The corresponding invoice will also be automatically updated to reflect the payment status.</p>
+
+</div>
+
+<div class="faq-item reveal-on-scroll">
+
+<h3>Will QoZap be accessible on different devices?</h3>
+
+<p>Our primary focus is on developing a robust and user-friendly mobile experience. We are also exploring the possibility of offering web access for certain functionalities in the future to provide even greater flexibility.</p>
+
+</div>
+
+</section>
+
+
+
+<section id="contact" class="contact-section reveal-on-scroll">
+
+<h2>Get in Touch with the QoZap Team</h2>
+
+<p>Have questions, suggestions, or just curious to learn more about how QoZap can benefit your service business? We'd love to hear from you!</p>
+
+<p>Phone: <a href="tel:0606507692">060 650 7692</a></p>
+
+<p>Email: <a href="mailto:qozappinfo@gmail.com">qozappinfo@gmail.com</a></p>
+
+
+
+<hr style="border-color: rgba(255, 255, 255, 0.1); margin: 30px auto; width: 80%;">
+
+
+
+<h2>Stay Updated on QoZap's Progress!</h2>
+
+<p>Be the first to receive exciting news about QoZap's development milestones, upcoming features, and our official launch. Subscribe now for exclusive updates!</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdj_4Q1Ulg_HqK580sEB16H8x90JxZbtR_gYWyaSZ8ug0p5lg/viewform?usp=header" class="cta-button" style="color: white;">Subscribe for Updates</a>
+
+</section>
+
+
+
+<div class="disclaimer reveal-on-scroll">
+
+<p>Please remember: QoZap is currently under active development. The features and functionalities described on this page are part of our development plans and may be subject to modifications or additions.</p>
+
+</div>
+
+
+
+</div>
+
+
+
+<div id="surveyModal" class="modal-overlay">
+
+<div class="modal-content">
+
+<button class="modal-close-button">&times;</button>
+
+<h2>We Value Your Expertise!</h2>
+
+<p>Help us build QoZap into the perfect tool for service providers. Take a moment to share your valuable insights through our brief survey!</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take the Survey Now!</a>
+
+</div>
+
+</div>
+
+
+
+<div class="chatbot-widget-and-pointer-wrapper">
+
+<script>
+
+window.__ow = window.__ow || {};
+
+window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
+
+window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
+
+window.__ow.integration_name = "manual_settings";
+
+window.__ow.product_name = "chatbot";
+
+;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
+
+</script>
+
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+
+</div>
+
+
+
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+// --- Pop-up Modal Logic ---
+
+const surveyModal = document.getElementById('surveyModal');
+
+const closeButton = document.querySelector('.modal-close-button');
+
+const ctaButtonInModal = surveyModal.querySelector('.cta-button');
+
+
+
+const showModal = () => {
+
+surveyModal.classList.add('active');
+
+};
+
+
+
+const hideModal = () => {
+
+surveyModal.classList.remove('active');
+
+};
+
+
+
+// This line controls when the modal appears (3000ms = 3 seconds)
+
+setTimeout(showModal, 3000);
+
+
+
+closeButton.addEventListener('click', hideModal);
+
+surveyModal.addEventListener('click', (event) => {
+
+if (event.target === surveyModal) {
+
+hideModal();
+
+}
+
+});
+
+ctaButtonInModal.addEventListener('click', hideModal);
+
+
+
+// --- Scroll-Reveal Logic ---
+
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+
+
+const observerOptions = {
+
+root: null,
+
+rootMargin: '0px',
+
+threshold: 0.1
+
+};
+
+
+
+const observerCallback = (entries, observer) => {
+
+entries.forEach(entry => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add('is-visible');
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+};
+
+
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+
+
+revealElements.forEach(element => {
+
+observer.observe(element);
+
+});
+
+});
+
+</script>
+
 </body>
+
 </html>
