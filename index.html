@@ -125,11 +125,12 @@
             margin-top: 0;
             margin-bottom: 20px;
         }
-        #overview h2, #community h2, #booking h2, #pricing h2, #newsletter h2, #faq h2, #contact h2 {
-            text-align: left; /* All H2s aligned left for consistency or specific sections as you prefer */
+        /* Adjusted alignment for specific H2s */
+        #overview h2, #community h2, #booking h2, #pricing h2, #newsletter h2, #faq h2, #contact h2, #why-the-survey h2 {
+            text-align: left; /* All H2s, including survey, now left-aligned */
         }
-        #features h2, #why-the-survey h2 {
-            text-align: right; /* Features and CTA sections aligned right for contrast */
+        #features h2 {
+            text-align: right; /* Keeping Features H2 aligned right */
         }
 
         h3 {
@@ -161,12 +162,15 @@
             margin-bottom: 12px;
         }
         .cta-section {
-            text-align: center;
+            text-align: left; /* Aligned section text to left */
             padding: 40px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 30px;
             background-color: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
+        }
+        .cta-section p {
+            text-align: left; /* Ensure paragraphs within CTA are left-aligned */
         }
         .cta-button {
             display: inline-block;
@@ -504,7 +508,7 @@
         <section id="why-the-survey" class="cta-section reveal-on-scroll">
             <h2>Your Voice Shapes QoZap - Share Your Insights Today!</h2>
             <p>As QoZap continues its development journey, your expertise as service providers in Kariega, Eastern Cape, is absolutely crucial. Help us build an app that truly understands and meets your unique needs. Take a moment to complete our survey and directly influence the features and functionalities that will empower your business. Your feedback on usability, desired tools, and potential challenges is invaluable!</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Contribute to QoZap's Future - Take Our Survey!</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take Our Survey!</a>
         </section>
 
         <section id="faq">
@@ -541,7 +545,7 @@
 
             <h2>Stay Updated on QoZap's Progress!</h2>
             <p>Be the first to receive exciting news about QoZap's development milestones, upcoming features, and our official launch in the Kariega area. Subscribe now for exclusive updates!</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj_4Q1Ulg_HqK580sEB16H8x90JxZbtR_gYWyaSZ8ug0p5lg/viewform?usp=header" class="cta-button" style="color: white;">Subscribe for Exclusive QoZap Updates</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj_4Q1Ulg_HqK580sEB16H8x90JxZbtR_gYWyaSZ8ug0p5lg/viewform?usp=header" class="cta-button" style="color: white;">Subscribe for Updates</a>
         </section>
 
         <div class="disclaimer reveal-on-scroll">
@@ -555,7 +559,7 @@
             <button class="modal-close-button">&times;</button>
             <h2>We Value Your Expertise!</h2>
             <p>Help us build QoZap into the perfect tool for service providers in Kariega. Take a moment to share your valuable insights through our brief survey!</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take the Survey Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScf_hCXT3rXSSjXZ6ilzwcE-oWGQIMpXTbimbyzQgwdR85RLA/viewform?usp=header" class="cta-button">Take the Survey Now!</a>
         </div>
     </div>
 
