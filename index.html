@@ -207,6 +207,22 @@
         #features ul li {
             margin-bottom: 12px;
         }
+
+        /* NEW CSS: Styling for bold bullet points and bold first part of list item */
+        #overview ul li::marker,
+        #features ul li::marker,
+        #pricing .info-block ul li::marker,
+        #newsletter .info-block ul li::marker {
+            font-weight: bold;
+        }
+
+        #overview ul li strong,
+        #features ul li strong,
+        #pricing .info-block ul li strong,
+        #newsletter .info-block ul li strong {
+            font-weight: bold;
+        }
+
         .cta-section {
             text-align: left;
             padding: 40px 20px;
@@ -499,21 +515,21 @@
             <div class="info-block">
                 <h3>Our Principles</h3>
                 <ul>
-                    <li>**Simplicity by Design:** Easy-to-use for everyone, regardless of tech savviness.</li>
-                    <li>**Unmatched Efficiency:** Generate quotes & invoices swiftly; accelerate payment collection with integrated solutions (e.g., QR codes).</li>
-                    <li>**Mobile-First Advantage:** Fully functional and seamless experience on your smartphone/tablet.</li>
-                    <li>**Community & Collaboration:** Foster a vibrant network for knowledge sharing and mutual support.</li>
+                    <li><strong>Simplicity by Design:</strong> Easy-to-use for everyone, regardless of tech savviness.</li>
+                    <li><strong>Unmatched Efficiency:</strong> Generate quotes & invoices swiftly; accelerate payment collection with integrated solutions (e.g., QR codes).</li>
+                    <li><strong>Mobile-First Advantage:</strong> Fully functional and seamless experience on your smartphone/tablet.</li>
+                    <li><strong>Community & Collaboration:</strong> Foster a vibrant network for knowledge sharing and mutual support.</li>
                 </ul>
             </div>
             <div class="info-block">
                 <h3>Who is QoZap For?</h3>
                 <p>Designed for diverse **mobile service professionals** who serve clients on-site. This includes:</p>
                 <ul>
-                    <li>**Home Service Heroes:** Plumbers, electricians, cleaners, handymen.</li>
-                    <li>**Mobile Beauty & Wellness:** Hairdressers, massage therapists, personal trainers.</li>
-                    <li>**Knowledge Sharers:** Private tutors, music instructors.</li>
-                    <li>**Dedicated Pet Caregivers:** Mobile groomers, dog walkers.</li>
-                    <li>**And many more!** If you provide services on the go, QoZap is for you.</li>
+                    <li><strong>Home Service Heroes:</strong> Plumbers, electricians, cleaners, handymen.</li>
+                    <li><strong>Mobile Beauty & Wellness:</strong> Hairdressers, massage therapists, personal trainers.</li>
+                    <li><strong>Knowledge Sharers:</strong> Private tutors, music instructors.</li>
+                    <li><strong>Dedicated Pet Caregivers:</strong> Mobile groomers, dog walkers.</li>
+                    <li><strong>And many more!</strong> If you provide services on the go, QoZap is for you.</li>
                 </ul>
             </div>
         </section>
@@ -521,14 +537,14 @@
         <section id="features" class="reveal-on-scroll">
             <h2>QoZap's Core Features: Streamline Your Service Business (Under Development)</h2>
             <ul>
-                <li>**Effortless Quote Generation:** Create & share professional quotes instantly via WhatsApp, email, or in person.</li>
-                <li>**Seamless On-Site Invoice Preparation:** Easily tally expenses and generate final invoices with a tap after service.</li>
-                <li>**Automated Professional Invoices:** QoZap calculates total costs (combining expenses, labor, and service fees based on your onboarding setup) and produces a polished, comprehensive invoice, complete with all your professional details and the servicing employee's information.</li>
-                <li>**Flexible & Instant Payment Options with QR Code:** Present a dynamic QR code on your phone for immediate client scanning and payment. Alternatively, securely share the invoice via email, WhatsApp, or other platforms for remote payment.</li>
-                <li>**Secure Client-Side Payment Gateway:** Your clients will experience a frictionless payment process with a "Pay Now" button, redirecting them to a secure gateway where they can choose their preferred method: PayPal, other trusted EFT gateways, card payment, or direct EFT to your pre-configured bank details.</li>
-                <li>**Automated Payment Reminders:** Reduce outstanding debts and improve cash flow with intelligent, automated payment reminders sent to clients with pending invoices, directly via email, WhatsApp, or within the app.</li>
-                <li>**Real-Time Payment Tracking & Instant Notifications:** Receive immediate notifications the moment a client payment is processed. QoZap automatically logs all payments, giving you an always-updated overview of outstanding invoices and a complete payment history for easy reconciliation.</li>
-                <li>**(Future Development) Enhanced Repeat Service Functionality:** For returning clients, QoZap will securely store past service history. Upon payment for new services, client payment details can be saved (with their consent) to ensure even smoother and faster future transactions, building lasting relationships.</li>
+                <li><strong>Effortless Quote Generation:</strong> Create & share professional quotes instantly via WhatsApp, email, or in person.</li>
+                <li><strong>Seamless On-Site Invoice Preparation:</strong> Easily tally expenses and generate final invoices with a tap after service.</li>
+                <li><strong>Automated Professional Invoices:</strong> QoZap calculates total costs (combining expenses, labor, and service fees based on your onboarding setup) and produces a polished, comprehensive invoice, complete with all your professional details and the servicing employee's information.</li>
+                <li><strong>Flexible & Instant Payment Options with QR Code:</strong> Present a dynamic QR code on your phone for immediate client scanning and payment. Alternatively, securely share the invoice via email, WhatsApp, or other platforms for remote payment.</li>
+                <li><strong>Secure Client-Side Payment Gateway:</strong> Your clients will experience a frictionless payment process with a "Pay Now" button, redirecting them to a secure gateway where they can choose their preferred method: PayPal, other trusted EFT gateways, card payment, or direct EFT to your pre-configured bank details.</li>
+                <li><strong>Automated Payment Reminders:</strong> Reduce outstanding debts and improve cash flow with intelligent, automated payment reminders sent to clients with pending invoices, directly via email, WhatsApp, or within the app.</li>
+                <li><strong>Real-Time Payment Tracking & Instant Notifications:</strong> Receive immediate notifications the moment a client payment is processed. QoZap automatically logs all payments, giving you an always-updated overview of outstanding invoices and a complete payment history for easy reconciliation.</li>
+                <li><strong> (Future Development) Enhanced Repeat Service Functionality:</strong> For returning clients, QoZap will securely store past service history. Upon payment for new services, client payment details can be saved (with their consent) to ensure even smoother and faster future transactions, building lasting relationships.</li>
             </ul>
         </section>
 
@@ -565,14 +581,14 @@
             <div class="info-block">
                 <h3>Automated Product Catalog Updates</h3>
                 <ul>
-                    <li>**Intelligent Web Crawlers:** Continuously update product pricing from your frequented stores (e.g., Buco, Midas), eliminating manual checks.</li>
+                    <li><strong>Intelligent Web Crawlers:</strong> Continuously update product pricing from your frequented stores (e.g., Buco, Midas), eliminating manual checks.</li>
                 </ul>
             </div>
             <div class="info-block">
                 <h3>Precise On-Site Pricing with Custom Markups</h3>
                 <ul>
-                    <li>**Instant Price Lookup:** Instantly find up-to-date product prices in the app.</li>
-                    <li>**Automated Markup Application:** Apply your pre-set markup (e.g., 2.5%) for accurate client charges and optimal profitability.</li>
+                    <li><strong>Instant Price Lookup:</strong> Instantly find up-to-date product prices in the app.</li>
+                    <li><strong>Automated Markup Application:</strong> Apply your pre-set markup (e.g., 2.5%) for accurate client charges and optimal profitability.</li>
                 </ul>
             </div>
         </section>
@@ -582,13 +598,13 @@
             <div class="info-block">
                 <h3>Personalized Service Provider Newsletter</h3>
                 <ul>
-                    <li>**Tailored Content:** Receive tailored news, trends, and tips relevant to your field, helping you hone skills and expand knowledge.</li>
+                    <li><strong>Tailored Content:</strong> Receive tailored news, trends, and tips relevant to your field, helping you hone skills and expand knowledge.</li>
                 </ul>
             </div>
             <div class="info-block">
                 <h3>Access to Cheaper, Higher-Quality Product Offers</h3>
                 <ul>
-                    <li>**Exclusive Discounts:** Get exclusive discounts and offers on materials from partner suppliers (Buco, Midas, etc.) to optimize costs and enhance client value.</li>
+                    <li><strong>Exclusive Discounts:</strong> Get exclusive discounts and offers on materials from partner suppliers (Buco, Midas, etc.) to optimize costs and enhance client value.</li>
                 </ul>
             </div>
         </section>
