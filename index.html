@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QoZap - Empowering Service Professionals Everywhere</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -12,7 +12,7 @@
         body {
             font-family: sans-serif;
             margin: 0;
-            background-image: url('./images/background.png'); /* Update the path to the correct relative location */
+            background-image: url('background.png'); /* Ensure this path is correct */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center top;
@@ -38,7 +38,7 @@
             gap: 15px; /* Space between buttons */
             padding-left: 20px;
             padding-right: 20px;
-            transition: transform 0.3s ease-out; /* Smooth transition for disappearing effect */
+            transition: top 0.3s ease-out; /* Smooth transition for disappearing effect */
         }
 
         /* Class to hide the navbar */
@@ -73,7 +73,7 @@
             padding: 30px;
             background-color: rgba(0, 0, 0, 0); /* Transparent background for container */
             border-radius: 8px;
-            visibility: hidden;
+            opacity: 0;
             animation: fadeIn 1.5s forwards;
             padding-left: 50px;
             padding-right: 50px;
@@ -341,8 +341,8 @@
 
         /* --- General Animations (for container) --- */
         @keyframes fadeIn {
-            from { visibility: hidden; opacity: 0; }
-            to { visibility: visible; opacity: 1; }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* --- Scroll-Reveal Animations --- */
@@ -367,28 +367,6 @@
         }
 
         /* Media Query for smaller screens (mobile adjustments) */
-        @media (max-width: 1024px) {
-            body {
-                padding-top: 80px; /* Adjusted for medium screens */
-            }
-            .navbar {
-                flex-wrap: wrap;
-                justify-content: space-between;
-                padding: 15px;
-            }
-            .navbar-button {
-                font-size: 0.9em;
-                padding: 8px 12px;
-            }
-            .navigation-hub {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 20px;
-            }
-            .logo-header h1 {
-                font-size: 2em;
-            }
-        }
-
         @media (max-width: 768px) {
             body {
                 padding-top: 100px; /* More space for wrapped navbar on small screens */
@@ -451,32 +429,6 @@
                 padding: 10px 20px;
             }
         }
-
-        @media (max-width: 480px) {
-            body {
-                padding-top: 120px; /* Adjusted for very small screens */
-            }
-            .navbar {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 8px;
-            }
-            .navbar-button {
-                font-size: 0.8em;
-                padding: 5px 8px;
-            }
-            .navigation-hub {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            .logo-header h1 {
-                font-size: 1.5em;
-            }
-            .cta-button {
-                font-size: 0.9em;
-                padding: 8px 15px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -495,7 +447,7 @@
     <div class="container">
         <div class="logo-header">
             <h1>Welcome To the Future of Service Management:</h1>
-            <img src="logo.png" alt="QoZap Logo" loading="lazy">
+            <img src="logo.png" alt="QoZap Logo">
             <p>Your Premier Invoicing & Service Management App</p>
         </div>
 
@@ -547,39 +499,38 @@
             <div class="info-block">
                 <h3>Our Principles</h3>
                 <ul>
-                    <li><strong>Simplicity by Design;</strong> Easy-to-use for everyone, regardless of tech savviness.</li>
-                    <li><strong>Unmatched Efficiency;</strong> Generate quotes & invoices swiftly; accelerate payment collection with integrated solutions (e.g., QR codes).</li>
-                    <li><strong>Mobile-First Advantage;</strong> Fully functional and seamless experience on your smartphone/tablet.</li>
-                    <li><strong>Community & Collaboration;</strong> Foster a vibrant network for knowledge sharing and mutual support.</li>
+                    <li>**Simplicity by Design:** Easy-to-use for everyone, regardless of tech savviness.</li>
+                    <li>**Unmatched Efficiency:** Generate quotes & invoices swiftly; accelerate payment collection with integrated solutions (e.g., QR codes).</li>
+                    <li>**Mobile-First Advantage:** Fully functional and seamless experience on your smartphone/tablet.</li>
+                    <li>**Community & Collaboration:** Foster a vibrant network for knowledge sharing and mutual support.</li>
                 </ul>
             </div>
             <div class="info-block">
                 <h3>Who is QoZap For?</h3>
                 <p>Designed for diverse **mobile service professionals** who serve clients on-site. This includes:</p>
                 <ul>
-                    <li><strong>Home Service Heroes;</strong> Plumbers, electricians, cleaners, handymen.</li>
-                    <li><strong>Mobile Beauty & Wellness;</strong> Hairdressers, massage therapists, personal trainers.</li>
-                    <li><strong>Knowledge Sharers;</strong> Private tutors, music instructors.</li>
-                    <li><strong>Dedicated Pet Caregivers;</strong> Mobile groomers, dog walkers.</li>
-                    <li><strong>And many more!</strong> If you provide services on the go, QoZap is for you.</li>
+                    <li>**Home Service Heroes:** Plumbers, electricians, cleaners, handymen.</li>
+                    <li>**Mobile Beauty & Wellness:** Hairdressers, massage therapists, personal trainers.</li>
+                    <li>**Knowledge Sharers:** Private tutors, music instructors.</li>
+                    <li>**Dedicated Pet Caregivers:** Mobile groomers, dog walkers.</li>
+                    <li>**And many more!** If you provide services on the go, QoZap is for you.</li>
                 </ul>
             </div>
         </section>
 
         <section id="features" class="reveal-on-scroll">
-    <h2>QoZap's Core Features: Streamline Your Service Business (Under Development)</h2>
-    <ul>
-        <li><strong>Effortless Quote Generation:</strong> Instantly create and share professional quotes via WhatsApp, email, or in person.</li>
-        <li><strong>Seamless On-Site Invoice Preparation:</strong> Tally expenses and generate final invoices with a single tap after service completion.</li>
-        <li><strong>Automated Professional Invoices:</strong> QoZap calculates total costs (including expenses, labor, and service fees) based on your onboarding setup, then generates a polished invoice with your business and employee details.</li>
-        <li><strong>Flexible QR Payment Options:</strong> Display a QR code on your phone for immediate client scanning, or send the invoice remotely via WhatsApp, email, or other platforms.</li>
-        <li><strong>Secure Payment Gateway:</strong> Clients can click a "Pay Now" button to choose from PayPal, EFT, card payment, or other secure options linked to your pre-set bank details.</li>
-        <li><strong>Automated Payment Reminders:</strong> Reduce overdue payments with intelligent reminders sent via WhatsApp, email, or in-app to clients with pending invoices.</li>
-        <li><strong>Real-Time Payment Tracking:</strong> Get notified the moment a client pays. QoZap logs all transactions and keeps your invoice dashboard always up to date.</li>
-        <li><strong>(Coming Soon) Repeat Service Functionality:</strong> For returning clients, QoZap will save past service history and payment methods (with consent) to enable faster, smoother repeat transactions.</li>
-    </ul>
-</section>
-
+            <h2>QoZap's Core Features: Streamline Your Service Business (Under Development)</h2>
+            <ul>
+                <li>**Effortless Quote Generation:** Create & share professional quotes instantly via WhatsApp, email, or in person.</li>
+                <li>**Seamless On-Site Invoice Preparation:** Easily tally expenses and generate final invoices with a tap after service.</li>
+                <li>**Automated Professional Invoices:** QoZap calculates total costs (combining expenses, labor, and service fees based on your onboarding setup) and produces a polished, comprehensive invoice, complete with all your professional details and the servicing employee's information.</li>
+                <li>**Flexible & Instant Payment Options with QR Code:** Present a dynamic QR code on your phone for immediate client scanning and payment. Alternatively, securely share the invoice via email, WhatsApp, or other platforms for remote payment.</li>
+                <li>**Secure Client-Side Payment Gateway:** Your clients will experience a frictionless payment process with a "Pay Now" button, redirecting them to a secure gateway where they can choose their preferred method: PayPal, other trusted EFT gateways, card payment, or direct EFT to your pre-configured bank details.</li>
+                <li>**Automated Payment Reminders:** Reduce outstanding debts and improve cash flow with intelligent, automated payment reminders sent to clients with pending invoices, directly via email, WhatsApp, or within the app.</li>
+                <li>**Real-Time Payment Tracking & Instant Notifications:** Receive immediate notifications the moment a client payment is processed. QoZap automatically logs all payments, giving you an always-updated overview of outstanding invoices and a complete payment history for easy reconciliation.</li>
+                <li>**(Future Development) Enhanced Repeat Service Functionality:** For returning clients, QoZap will securely store past service history. Upon payment for new services, client payment details can be saved (with their consent) to ensure even smoother and faster future transactions, building lasting relationships.</li>
+            </ul>
+        </section>
 
         <section id="community" class="reveal-on-scroll">
             <h2>The QoZap Community Hub: Grow Your Network, Grow Your Business!</h2>
@@ -613,11 +564,16 @@
             <h2>Smart Pricing & Real-Time Product Management</h2>
             <div class="info-block">
                 <h3>Automated Product Catalog Updates</h3>
-                <p>Our intelligent web crawlers continuously update product pricing from your frequented stores (e.g., Buco, Midas), eliminating manual checks.</p>
+                <ul>
+                    <li>**Intelligent Web Crawlers:** Continuously update product pricing from your frequented stores (e.g., Buco, Midas), eliminating manual checks.</li>
+                </ul>
             </div>
             <div class="info-block">
                 <h3>Precise On-Site Pricing with Custom Markups</h3>
-                <p>Instantly find up-to-date product prices in the app and apply your pre-set markup (e.g., 2.5%) for accurate client charges and optimal profitability.</p>
+                <ul>
+                    <li>**Instant Price Lookup:** Instantly find up-to-date product prices in the app.</li>
+                    <li>**Automated Markup Application:** Apply your pre-set markup (e.g., 2.5%) for accurate client charges and optimal profitability.</li>
+                </ul>
             </div>
         </section>
 
@@ -625,11 +581,15 @@
             <h2>Exclusive Industry Insights & Supplier Offers</h2>
             <div class="info-block">
                 <h3>Personalized Service Provider Newsletter</h3>
-                <p>Receive tailored news, trends, and tips relevant to your field, helping you hone skills and expand knowledge.</p>
+                <ul>
+                    <li>**Tailored Content:** Receive tailored news, trends, and tips relevant to your field, helping you hone skills and expand knowledge.</li>
+                </ul>
             </div>
             <div class="info-block">
                 <h3>Access to Cheaper, Higher-Quality Product Offers</h3>
-                <p>Get exclusive discounts and offers on materials from partner suppliers (Buco, Midas, etc.) to optimize costs and enhance client value.</p>
+                <ul>
+                    <li>**Exclusive Discounts:** Get exclusive discounts and offers on materials from partner suppliers (Buco, Midas, etc.) to optimize costs and enhance client value.</li>
+                </ul>
             </div>
         </section>
 
@@ -674,10 +634,6 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj_4Q1Ulg_HqK580sEB16H8x90JxZbtR_gYWyaSZ8ug0p5lg/viewform?usp=header" class="cta-button" style="color: white;">Subscribe for Updates</a>
         </section>
 
-        <!-- 
-            The disclaimer section provides important information about the current development status of QoZap.
-            It uses the 'reveal-on-scroll' class to ensure it appears with a smooth animation as the user scrolls down.
-        -->
         <div class="disclaimer reveal-on-scroll">
             <p>Please remember: QoZap is currently under active development. Features described may be subject to modifications or additions.</p>
         </div>
@@ -694,48 +650,12 @@
 
     <div class="chatbot-widget-and-pointer-wrapper">
         <script>
-            window.onload = function() {
-                // Initialize the OpenWidget configuration object if it doesn't already exist
-                window.__ow = window.__ow || {};
-
-                // Set the organization ID for the chatbot widget
-                window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
-
-                // Specify the template ID for the chatbot widget's appearance
-                window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
-
-                // Define the integration name for tracking or identification purposes
-                window.__ow.integration_name = "manual_settings";
-
-                // Set the product name to indicate this is a chatbot widget
-                window.__ow.product_name = "chatbot";
-
-                // Load the OpenWidget script asynchronously and initialize it
-                ;(function(n,t,c){
-                    function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
-                    var e={
-                        _q:[],_h:null,_v:"2.0",
-                        on:function(){i(["on",c.call(arguments)])},
-                        once:function(){i(["once",c.call(arguments)])},
-                        off:function(){i(["off",c.call(arguments)])},
-                        get:function(){
-                            if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");
-                            return i(["get",c.call(arguments)])
-                        },
-                        call:function(){i(["call",c.call(arguments)])},
-                        init:function(){
-                            var n=t.createElement("script");
-                            n.async=!0;
-                            n.type="text/javascript";
-                            n.src="https://cdn.openwidget.com/openwidget.js";
-                            t.head.appendChild(n)
-                        }
-                    };
-                    // Initialize the widget if asyncInit is not already set
-                    !n.__ow.asyncInit && e.init();
-                    n.OpenWidget = n.OpenWidget || e;
-                }(window,document,[].slice))
-            };
+            window.__ow = window.__ow || {};
+            window.__ow.organizationId = "86745af8-b7d7-405b-baf8-edacf4fe992e";
+            window.__ow.template_id = "9b6fff69-6489-4ead-a3d8-91f5c6d6fb26";
+            window.__ow.integration_name = "manual_settings";
+            window.__ow.product_name = "chatbot";
+            ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice))
         </script>
         <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
     </div>
@@ -793,16 +713,16 @@
 
             // --- Navbar Disappearing on Scroll Logic ---
             const navbar = document.querySelector('.navbar');
+            let lastScrollY = window.scrollY;
+
             window.addEventListener('scroll', () => {
                 if (window.scrollY > lastScrollY) {
                     // Scrolling down
-                    navbar.style.transform = 'translateY(-100%)';
+                    navbar.classList.add('hidden');
                 } else {
                     // Scrolling up
-                    navbar.style.transform = 'translateY(0)';
+                    navbar.classList.remove('hidden');
                 }
-                lastScrollY = window.scrollY;
-            }, { passive: true });
                 lastScrollY = window.scrollY;
             });
         });
